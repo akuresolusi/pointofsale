@@ -49,8 +49,8 @@
 							<span class="icon"><i class="ti-bar-chart red "></i></span>
 							<p>
 								<span class="number">Rp. 0</span>
-								<span class="title">Piutang</span>
-								<a href="#"><span class="readmore">Lihat Data</span></a>
+								<span class="title">Laporan</span>
+								<a href="<?php echo base_url() ?>laporan"><span class="readmore">Lihat Data</span></a>
 							</p>
 						</div>
 					</div>

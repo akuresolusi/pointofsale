@@ -3,7 +3,7 @@ html {
   min-height: 100%; }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #f3f5f8;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 15px;
   color: #676a6d; }
@@ -105,6 +105,9 @@ body {
     background-color: #6bb9f0; }
   .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: #6bb9f0; }
+  .navbar-brand{
+    padding: 5px 12px;
+  }
 /********************
  * PANELS
  ********************/
@@ -216,7 +219,7 @@ background-color: #fafafa; }
   padding: 10px;
   margin: 5px;
   padding-bottom: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background: #fff;
   border-top: 8px solid #6bb9f0;
   border-radius: 5px;

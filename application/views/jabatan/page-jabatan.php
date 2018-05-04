@@ -8,8 +8,8 @@
 						<h3 class="page-title"><?php echo $title; ?></h3>
 					</div>
 					<div class="col-md-6 add-data">
-					    <a href="#"><button class="btn btn-info btn-action btn-add" data-toggle="modal" data-target="#myModal">
-					    <span class="fa fa-plus"> Tambah Jabatan</span></button></a>
+					    <a href="#"><button class="btn btn-primary btn-action btn-add" data-toggle="modal" data-target="#myModal">
+					    <span class="fa fa-plus"></span> Tambah Data</button></a>
 					</div>
 				</div>
 			</div>

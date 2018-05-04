@@ -8,7 +8,7 @@
 						<h3 class="page-title"><?php echo $title; ?></h3>
 					</div>
 					<div class="col-md-6 add-data">
-					    <a href="<?php echo base_url(); ?>metodebayar/tambah" class="btn btn-primary btn-action btn-add"><span class="fa fa-plus"> Tambah Metode Bayar</span></a>
+					    <a href="<?php echo base_url(); ?>metodebayar/tambah" class="btn btn-primary btn-action btn-add"><span class="fa fa-plus"></span> Tambah Data</a>
 					</div>
 				</div>
 			</div>

@@ -15,6 +15,12 @@ class Supplier extends CI_Controller {
 		$this->load->view('layout',$data);
 	}
 
+	public function details(){
+		$data['isi'] = "supplier/view-supplier";
+		$data['title'] = 'Lihat Data Supplier';
+		$this->load->view('layout',$data);
+	}
+
 	public function tambah(){
 		$data['list_kota'] = $this->master_model->list_kota();
 		$data['list_bank'] = $this->master_model->list_bank();

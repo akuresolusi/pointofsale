@@ -21,6 +21,12 @@ class Pelunasanbeli extends CI_Controller {
 		$this->load->view('layout',$data);
 	}
 
+	public function details(){
+		$data['isi'] = "pelunasanbeli/view-pelunasan";
+		$data['title'] = 'Lihat Data Pelunasan';
+		$this->load->view('layout',$data);
+	}
+
 	public function tambah(){
 		$data['list_bank'] = $this->master_model->list_bank();
 		$data['list_rekening'] = $this->master_model->list_rekening();

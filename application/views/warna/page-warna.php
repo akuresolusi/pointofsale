@@ -9,7 +9,7 @@
 					</div>
 					<div class="col-md-6 add-data">
 					    <a href="#"><button class="btn btn-primary btn-action btn-add" data-toggle="modal" data-target="#myModal">
-					    <span class="fa fa-plus"> Tambah Warna</span></button></a>
+					    <span class="fa fa-plus"></span> Tambah Data</button></a>
 					</div>
 				</div>
 			</div>

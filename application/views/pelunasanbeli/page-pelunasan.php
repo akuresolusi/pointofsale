@@ -8,7 +8,7 @@
 						<h3 class="page-title"><?php echo $title; ?></h3>
 					</div>
 					<div class="col-md-6 add-data">
-					    <a href="<?php echo base_url(); ?>pelunasanbeli/tambah"><button class="btn btn-primary btn-action btn-add"><span class="fa fa-plus"> Tambah Pelunasan</span></button></a>
+					    <a href="<?php echo base_url(); ?>pelunasanbeli/tambah"><button class="btn btn-primary btn-action btn-add"><span class="fa fa-plus"></span> Tambah Data</button></a>
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 										<div class='dropdown'>
 									        <a href='#'' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
 									        <ul class='dropdown-menu pull-right'>
-									            <li><a href='#'><span class='fa fa-eye'></span> Lihat Data</a></li>
+									            <li><a href='".base_url()."pelunasanbeli/details'><span class='fa fa-eye'></span> Lihat Data</a></li>
 									            <li><a href='".base_url()."pelunasanbeli/proses_hapus?kode=".$value['kode']."'><span class='fa fa-trash'></span> Hapus Data</a></li>
 									        </ul>
 								    	</div>

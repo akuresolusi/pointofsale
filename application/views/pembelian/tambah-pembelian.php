@@ -173,8 +173,8 @@ option{
 					  			<!-- TBODY -->
 					  		</table>
 
-					  		<div class="col-sm-12">
-						  		<div class="col-md-6" style="padding-left: 0; margin-bottom: 20px;">
+					  		<div class="col-sm-12 nopadding">
+						  		<div class="col-md-6 nopadding" style="margin-bottom: 20px;">
 						  			<label>Catatan</label>
 						  			<textarea class="form-control" name="catatan" style="height: 125px;" placeholder="Catatan"></textarea>
 						  		</div>

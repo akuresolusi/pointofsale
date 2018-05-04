@@ -87,3 +87,31 @@ table{
 .group{
 	margin:10px 0 10px 22px; font-weight: 600; text-transform: uppercase; font-size: 13px;
 }
+.nopadding{
+	padding: 0;
+}
+
+/*LAPORAN*/
+.report{
+	border:1px solid #ddd;
+	border-radius: 5px;
+	padding: 30px 20px;
+	margin-bottom: 20px;
+	color: #696c80;
+}
+.report:hover{
+	background: #44b2e4;
+	transition: 1s;
+	color: #fff;
+	border:1px solid #44b2e4;
+}
+.r-icon{
+	font-size: 30px;
+	text-align: center;
+}
+.r-title h4{
+	margin: 10px;
+	font-size: 18px;
+	text-align: center;
+}
+/*END LAPORAN*/

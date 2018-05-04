@@ -44,7 +44,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="#"><img src="<?php echo base_url(); ?>assets/img/logo5.png" alt="Logo" class="img-responsive logo"></a>
+				<a href="#"><img src="<?php echo base_url(); ?>assets/img/logo-akure.png" alt="Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -53,12 +53,12 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="log">Administrator <span class="ti-angle-down" style="font-size: 11px; margin-left: 5px;"></span></a>
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="log"><img src="<?php echo base_url(); ?>assets/img/img-user.png" class="img-circle" alt="Avatar"> Hi, Firman</a>
 			          <ul class="dropdown-menu">
-			            <li><a href="#"><span class="ti-user"> Profile Saya</span></a></li>
-			            <li><a href="#"><span class="ti-lock"> Ganti Password</span></a></li>
+			            <li><a href="#"><span class="ti-user"></span> Profile Saya</a></li>
+			            <li><a href="#"><span class="ti-lock"></span> Ganti Password</a></li>
 			            <li role="separator" class="divider"></li>
-			            <li><a href="<?php echo base_url(); ?>"><span class="ti-power-off"> Logout</span></a></li>
+			            <li><a href="<?php echo base_url(); ?>"><span class="ti-power-off"></span> Logout</a></li>
 			          </ul>
 			        </li>
 		      	</ul>
@@ -103,23 +103,23 @@
 							<a href="#1" data-toggle="collapse" class="collapsed"><i class="ti-settings light-blue"></i> <span>Master Data</span> <i class="icon-submenu ti-angle-left"></i></a>
 							<div id="1" class="collapse ">
 								<ul class="nav">
-									<li><a href="<?php echo base_url() ?>supplier" class=""><i class="lnr lnr-user orange"></i> Supplier</a></li>
-									<li><a href="<?php echo base_url() ?>pelanggan" class=""><i class="lnr lnr-users green"></i> Pelanggan</a></li>
-									<li><a href="<?php echo base_url() ?>pegawai" class=""><i class="lnr lnr-users indigo"></i> Pegawai</a></li>
+									<li><a href="<?php echo base_url() ?>supplier" class=""><i class="ti-user orange"></i> Supplier</a></li>
+									<li><a href="<?php echo base_url() ?>pelanggan" class=""><i class="ti-user green"></i> Pelanggan</a></li>
+									<li><a href="<?php echo base_url() ?>pegawai" class=""><i class="ti-id-badge indigo"></i> Pegawai</a></li>
 									<li><a href="<?php echo base_url() ?>jabatan" class=""><i class="ti-stats-up"></i> Jabatan</a></li>
-									<li><a href="<?php echo base_url() ?>kategori" class=""><i class="lnr lnr-tag orange-1"></i> Kategori Barang</a></li>
-									<li><a href="<?php echo base_url() ?>kategorip" class=""><i class="lnr lnr-users"></i> Kategori Pelanggan</a></li>
-									<li><a href="<?php echo base_url() ?>satuan" class=""><i class="lnr lnr-list blue"></i> Satuan Barang</a></li>
-									<li><a href="<?php echo base_url() ?>syaratbayar" class=""><i class="lnr lnr-list red"></i> Syarat Bayar</a></li>
+									<li><a href="<?php echo base_url() ?>kategori" class=""><i class="ti-tag orange-1"></i> Kategori Barang</a></li>
+									<li><a href="<?php echo base_url() ?>kategorip" class=""><i class="ti-bookmark-alt"></i> Kategori Pelanggan</a></li>
+									<li><a href="<?php echo base_url() ?>satuan" class=""><i class="ti-bookmark-alt blue"></i> Satuan Barang</a></li>
+									<li><a href="<?php echo base_url() ?>syaratbayar" class=""><i class="ti-bookmark-alt red"></i> Syarat Bayar</a></li>
 									<li><a href="<?php echo base_url() ?>bank" class=""><i class="ti-money green"></i> Bank</a></li>
 									<li><a href="<?php echo base_url() ?>rekening" class=""><i class="ti-money blue"></i> Rekening</a></li>
-									<li><a href="<?php echo base_url() ?>kota" class=""><i class="lnr lnr-map-marker"></i> Kota</a></li>
-									<li><a href="<?php echo base_url() ?>warna" class=""><i class="lnr lnr-sun"></i> Warna</a></li>
+									<li><a href="<?php echo base_url() ?>kota" class=""><i class="ti-map-alt"></i> Kota</a></li>
+									<li><a href="<?php echo base_url() ?>warna" class=""><i class="ti-palette"></i> Warna</a></li>
 								</ul>
 							</div>
 						</li>
 						<li class="group">Laporan</li>
-						<li><a href="#"><i class="ti-bar-chart brown"></i> <span>Laporan</span></a></li>
+						<li><a href="<?php echo base_url() ?>laporan"><i class="ti-agenda brown"></i> <span>Laporan</span></a></li>
 
 					</ul>
 				</nav>

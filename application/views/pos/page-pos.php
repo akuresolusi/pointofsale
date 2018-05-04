@@ -9,6 +9,7 @@
 	<!-- VENDOR CSS -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/themify-icons/themify-icons.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/linearicons/style.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist/css/chartist-custom.css">
 		<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -34,10 +35,7 @@
 
 
 </style>
-
-	<!-- CHART -->
 </head>
-
 <body>
 	<!-- NAVBAR -->
 	 <nav class="navbar navbar-default">
@@ -48,140 +46,145 @@
         <span class="icon-bar" id="custom-icon"></span>
         <span class="icon-bar" id="custom-icon"></span>
       </button>
-      <a class="navbar-brand" href="#"><img src="<?php echo base_url() ?>assets/img/logo6.png"></a>
+      <a class="navbar-brand" href="#"><img src="<?php echo base_url() ?>assets/img/logo-white.png" width="140"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-      	<li><a href="#"><span class="lnr lnr-user menu_r"> Agus Setiawan</span></a></li>
-        <li><a href="#"><span class="lnr lnr-exit menu_r"> Logout</span></a></li>
+      	<li><a href="#"><span class="ti-user menu_r"> </span> <span class="menu_r"> Agus Setiawan</span></a></li>
+        <li><a href="#"><span class="ti-power-off menu_r"> </span><span class="menu_r"> Logout</span></span></a></li>
       </ul>
     </div>
   </div>
 </nav> 
 	<div class="container-fluid">
 		<div class="col-md-8" style="margin:-10px; margin-bottom: 30px;">
-					<!-- PENCARIAN -->
-					<div class="col-md-12" style="padding: 5px 5px 0px 5px;">
-						<form class="search" action="#">
-				          <div class="input-group stylish-input-group">
-				            <input type="text" class="form-control" id="custom-search"  placeholder="Cari Barang atau Scan" >
-				              <span class="input-group-addon" id="custom-search">
-				                <button type="submit">
-				                    <span class="fa fa-search" title="Cari"></span>
-				                </button>  
-				                <button type="submit" > 
-				                    <span class="fa fa-barcode" title="Scan"></span>
-				                </button>  
-				              </span>
-				            </div>
-				          </form>
-					</div>
-					<!-- END -->
+			<!-- PENCARIAN -->
+			<div class="col-md-12" style="padding: 5px 5px 0px 5px;">
+				<form class="search" action="#">
+		          <div class="input-group stylish-input-group">
+		            <input type="text" class="form-control" id="custom-search"  placeholder="Cari Barang atau Scan" >
+		              <span class="input-group-addon" id="custom-search">
+		                <button type="submit">
+		                    <span class="fa fa-search" title="Cari"></span>
+		                </button>  
+		                <button type="submit" > 
+		                    <span class="fa fa-barcode" title="Scan"></span>
+		                </button>  
+		              </span>
+		            </div>
+		          </form>
+			</div>
+			<!-- END -->
 
-					
-
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/1.png" class="img-responsive">
-							</div>
-							<span class="title">Kemeja Lengan Panjang</span>
-						</div>
+			
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/1.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/2.png" class="img-responsive">
-							</div>
-							<span class="title">Topi</span>
-						</div>
+					<span class="title">Kemeja Lengan Panjang</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/2.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/3.png" class="img-responsive">
-							</div>
-							<span class="title">Hoodie</span>
-						</div>
+					<span class="title">Topi</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/3.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/4.png" class="img-responsive">
-							</div>
-							<span class="title">Kemeja Lengan Pendek</span>
-						</div>
+					<span class="title">Hoodie</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/4.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/5.png" class="img-responsive">
-							</div>
-							<span class="title">Tank Top</span>
-						</div>
+					<span class="title">Kemeja Lengan Pendek</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/5.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/6.png" class="img-responsive">
-							</div>
-							<span class="title">Jeans Wanita</span>
-						</div>
+					<span class="title">Tank Top</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/6.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/7.png" class="img-responsive">
-							</div>
-							<span class="title">Kaos</span>
-						</div>
+					<span class="title">Jeans Wanita</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/7.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
-					<!-- PRODUCT -->
-					<a href="#">
-					<div class="col-md-3 item">
-						<div class="product">
-							<div class="img-item">
-								<img src="<?php echo base_url();?>assets/img/product/8.png" class="img-responsive">
-							</div>
-							<span class="title">Jas Formal</span>
-						</div>
+					<span class="title">Kaos</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<!-- PRODUCT -->
+			<a href="#">
+			<div class="col-md-3 item">
+				<div class="product">
+					<div class="img-item">
+						<img src="<?php echo base_url();?>assets/img/product/8.png" class="img-responsive">
 					</div>
-					</a>
-					<!-- END PRODUCT -->
+					<span class="title">Jas Formal</span>
+				</div>
+			</div>
+			</a>
+			<!-- END PRODUCT -->
+			<nav>
+			  <ul class="pager">
+			    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+			    <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
+			  </ul>
+			</nav>
 		</div>
 		<div class="col-md-4">
 			<div class="panel panel-headline custom-panel">
 				<div class="panel-body">
 					<div class="add-cust">
-						<span class="lnr lnr-user"></span><a href="" id="user"> Customer Baru</a>
+						<span class="ti-user"></span><a href="" id="user"> Customer Baru</a>
 					</div>
 					<div class="pricetotal">
 						<span id="left-list" style="font-size: 25px;">Grand Total</span>

@@ -106,10 +106,10 @@ option{
 						    <tbody id="list_faktur">
 						    </tbody>
 						  </table>
-					  		<div class="col-md-5" style="padding-left: 0; margin-bottom: 20px;">
+					  		<div class="col-md-5" style="margin-bottom: 20px;">
 					  			
 					  			<div class="row d">
-					  				<span id="d-title">Metode Bayar</span>	
+					  				<label>Metode Bayar</label>
 					  				<select class="form-control" name="metode" required="true" id="metode">
 					  					<option value="1">Cash</option>
 					  					<option value="2">Bank Transfer</option>
@@ -119,7 +119,7 @@ option{
 					  				</select>
 					  			</div>
 					  			<div class="row d" id="11">
-					  				<span id="d-title">Rekening Bank</span>	
+					  				<label>Rekening Bank</label>
 					  				<span id="sub-number">
 					  					<select class="form-control" name="rekbank" id="rekbank" style="width:270px;">
 						  					<?php
@@ -131,15 +131,15 @@ option{
 					  				</span>	
 					  			</div>
 					  			<div class="row d" id="22">
-					  				<span id="d-title">No Cek/Giro</span>	
+					  				<label>No CeK/Giro</label>	
 					  				<span id="sub-number"><input type="text" class="form-control"  name="nocek" id="nocek" style="width:200px;"></span>	
 					  			</div>
 					  			<div class="row d" id="33">
-					  				<span id="d-title">Tanggal Cek/Giro</span>	
+					  				<label>Tanggal Cek/Giro</label>
 					  				<span id="sub-number"><input type="date" class="form-control" name="tglcek" id="tglcek" style="width:200px;"></span>	
 					  			</div>
 					  			<div class="row d" id="44">
-					  				<span id="d-title">Bank</span>	
+					  				<label>Bank</label>
 					  				<span id="sub-number">
 					  					<select class="form-control" name="bank" id="bank" style="width:200px;">
 						  					<?php
@@ -151,15 +151,15 @@ option{
 					  				</span>	
 					  			</div>
 					  			<div class="row d" id="55">
-					  				<span id="d-title">No Kartu Kredit</span>	
+					  				<label>No Kartu Kredit</label>	
 					  				<span id="sub-number"><input type="text" class="form-control" name="nokartu" id="nokartu" style="width:200px;"></span>	
 					  			</div>
 					  			<div class="row d" id="66">
-					  				<span id="d-title">Nama Kartu Kredit</span>	
+					  				<label>Nama Kartu Kredit</label>	
 					  				<span id="sub-number"><input type="text" class="form-control" name="namakartu" id="namakartu" style="width:200px;"></span>	
 					  			</div>
 					  			<div class="row d">
-						  			<span id="d-title">Catatan</span>	
+						  			<label>Catatan</label>
 						  			<textarea class="form-control" name="catatan" style="height: 70px;"></textarea>
 						  		</div>
 					  		</div>

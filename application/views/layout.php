@@ -28,7 +28,7 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/pace-min.js"></script>
 	<!-- ICONS -->
 	<meta name="theme-color" content="#3498db">
-	<!-- <link rel="icon" sizes="192x192" href="<?php echo base_url() ?>assets/img/logo-q.png"> -->
+	<link rel="icon" sizes="192x192" href="<?php echo base_url() ?>assets/img/favicon.png">
 	<style>
             .sub-menu {
                 display: none;
@@ -96,7 +96,8 @@
 							</div>
 						</li>
 						<li><a href="<?php echo base_url() ?>pos" target="_blank"><i class="ti-credit-card red"></i> <span>Point Of Sale</span></a></li>
-						<li><a href="<?php echo base_url() ?>shop" target="_blank"><i class="ti-shopping-cart purple-1"></i> <span>eCommerce</span></a></li>
+						<li><a href="<?php echo base_url() ?>catalog" target="_blank"><i class="ti-shopping-cart red"></i> <span>Catalog</span></a></li>
+						<!-- <li><a href="<?php echo base_url() ?>shop" target="_blank"><i class="ti-shopping-cart purple-1"></i> <span>eCommerce</span></a></li> -->
 						<li><a href="#"><i class="ti-agenda orange"></i> <span>Biaya Beban</span></a></li>
 						<li class="group">Setting Data</li>
 						<li>

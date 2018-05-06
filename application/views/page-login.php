@@ -18,6 +18,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
 	<meta name="theme-color" content="#6bb9f0">
+	<link rel="icon" sizes="192x192" href="<?php echo base_url() ?>assets/img/favicon.png">
 	<style type="text/css">
 		body{
 			    

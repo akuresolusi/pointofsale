@@ -13,11 +13,11 @@
 				<div class="panel-heading">
 				</div>
 					<div class="panel-body">
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-money"></span>
+										<span class="fa fa-dollar"></span>
 									</div>
 									<div class="r-title">
 										<h4>Pendapatan Hari Ini</h4>
@@ -25,11 +25,11 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-shopping-cart"></span>
+										<span class="fa fa-shopping-cart"></span>
 									</div>
 									<div class="r-title">
 										<h4>Pembelian</h4>
@@ -37,11 +37,11 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-bag"></span>
+										<span class="fa fa-shopping-bag"></span>
 									</div>
 									<div class="r-title">
 										<h4>Penjualan</h4>
@@ -49,7 +49,31 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
+							<a href="">
+								<div class="report">
+									<div class="r-icon">
+										<span class="fa fa-money"></span>
+									</div>
+									<div class="r-title">
+										<h4>Pelunasan Pembelian</h4>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
+							<a href="">
+								<div class="report">
+									<div class="r-icon">
+										<span class="fa fa-money"></span>
+									</div>
+									<div class="r-title">
+										<h4>Pelunasan Penjualan</h4>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
@@ -61,11 +85,11 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-package"></span>
+										<span class="fa fa-cubes"></span>
 									</div>
 									<div class="r-title">
 										<h4>Stok</h4>
@@ -73,11 +97,11 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-package"></span>
+										<span class="fa fa-cubes"></span>
 									</div>
 									<div class="r-title">
 										<h4>Opname Stok</h4>
@@ -85,11 +109,11 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-agenda"></span>
+										<span class="fa fa-book"></span>
 									</div>
 									<div class="r-title">
 										<h4>Hutang</h4>
@@ -97,11 +121,11 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<a href="">
 								<div class="report">
 									<div class="r-icon">
-										<span class="ti-agenda"></span>
+										<span class="fa fa-book"></span>
 									</div>
 									<div class="r-title">
 										<h4>Piutang</h4>

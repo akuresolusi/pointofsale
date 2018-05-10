@@ -18,7 +18,7 @@
 				  <div class="panel-body">
 						<table id="data" class="table table-striped table-hover">
 							<thead>
-								<th width="20">No.</th>
+								<th width="20">No</th>
 								<th>No. Retur</th>
 								<th>Tgl. Retur</th>
 								<th>No. Faktur</th>
@@ -28,25 +28,39 @@
 								<th width="10">Aksi</th>
 							</thead>
 							<tbody>
-								<tr>
-									<td>1.</td>
-									<td>RB-0000005</td>
-									<td>Jan 30, 2018</td>
-									<td>FB-0000008</td>
-									<td>ABC, PT</td>
-									<td>5.000.000,00</td>
-									<td>0</td>
-									<td style="text-align: center;">
-									<div class="dropdown">
-								        <a href="#" class="btn btn-primary btn-xs" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" title="Action">Tindakan <span class="caret"></span></a>
-								        <ul class="dropdown-menu pull-right">
-								            <li><a href="#"><span class="fa fa-eye"></span> Lihat Data</a></li>
-								            <li><a href="#"><span class="fa fa-edit"></span> Edit Data</a></li>
-								            <li><a href="#"><span class="fa fa-trash"></span> Hapus Data</a></li>
-								        </ul>
-							    	</div>
-									</td>
-								</tr>
+							<?php
+								$i=0;
+								foreach ($list as $value) {
+									$i++;
+									$faktur = $this->pembelian_model->detail_pembelian($value['faktur']);
+									$supplier = $this->master_model->detail_supplier($faktur['idsupplier']);
+									$total = $this->retur_model->total_retur($value['id']);
+									$tretur = 0;
+									foreach ($total as $item) {
+										$tretur = ($item['qty'] * $item['harga']) + $tretur;
+									}
+									$tretur = $tretur + $value['uang_kembali'];
+									echo"
+										<tr>
+											<td>".$i."</td>
+											<td>".$value['id']."</td>
+											<td>".date_format(date_create($value['tanggal']),'d M Y')."</td>
+											<td>FB-".$value['faktur']."</td>
+											<td>".$supplier['nama']."</td>
+											<td>Rp ".$tretur."</td>
+											<td>Rp ".$value['uang_kembali']."</td>
+											<td style='text-align: left;'>
+												<div class='dropdown'>
+											        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
+											        <ul class='dropdown-menu pull-right'>
+											            <li><a href='#'><span class='fa fa-eye'></span> Lihat</a></li>
+											            <li><a href='#'><span class='fa fa-trash'></span> Hapus</a></li>
+											        </ul>
+										    	</div>
+											</td>
+										</tr>";
+								}
+							?>
 							</tbody>
 						</table>	
 					</div>

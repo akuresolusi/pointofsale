@@ -43,7 +43,7 @@ option{
 					      	<p><?php echo $supplier['alamat']; ?></p>
 					    </div>
 					<div class="col-md-5">
-					    <span id="sub-total">Total <span class="indigo">Rp. <?php echo $subtotal; ?></span></span>
+					    <span id="sub-total">Total <span class="indigo">Rp. <?php echo $gtotal; ?></span></span>
 					</div>
 				</div>
 				</div>

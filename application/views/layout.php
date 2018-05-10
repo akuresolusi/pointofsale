@@ -71,7 +71,7 @@
 				<nav>
 					<ul class="nav">
 						<li class="group">Dashboard</li>
-						<li><a href="<?php echo base_url(); ?>dashboard"><i class="ti-home red"></i> <span>Dashboard</span></a></li>
+						<li><a href="<?php echo base_url(); ?>dashboard"><i class="ti-dashboard red"></i> <span>Dashboard</span></a></li>
 						<li class="group">Barang</li>
 						<li><a href="<?php echo base_url() ?>barang"><i class="ti-package blue"></i> <span>Data Barang</span></a></li>
 						<li class="group">Transaksi</li>

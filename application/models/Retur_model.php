@@ -18,10 +18,6 @@ class Retur_model extends CI_Model {
 		return $this->db->get('retur_pembelian')->result_array();
 	}
 
-	public function cek_faktur(){
-		$this->db->get('pembelian');
-	}
-
 	public function retur_pembelian_item($faktur, $idbarang){
 		$this->db->select('SUM(qty) as jumlah');
 		$this->db->where('faktur', $faktur);
@@ -71,6 +67,28 @@ class Retur_model extends CI_Model {
 	public function total_retur($idretur){
 		$this->db->where('idretur', $idretur);
 		return $this->db->get('retur_pembelian_items')->result_array();
+	}
+
+	public function detail_retur($id){
+		$this->db->where('id', $id);
+		return $this->db->get('retur_pembelian')->row_array();
+	}
+
+	public function list_items_retur($idretur){
+		$this->db->where('idretur', $idretur);
+		return $this->db->get('retur_pembelian_items')->result_array();
+	}
+
+	public function hapus_retur($id){
+		$this->db->where('id', $id);
+		$this->db->delete('retur_pembelian');
+		return;
+	}
+
+	public function hapus_retur_items($idretur){
+		$this->db->where('idretur', $idretur);
+		$this->db->delete('retur_pembelian_items');
+		return;
 	}
 
 }

@@ -54,7 +54,7 @@
 											        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
 											        <ul class='dropdown-menu pull-right'>
 											            <li><a href='#'><span class='fa fa-eye'></span> Lihat</a></li>
-											            <li><a href='#'><span class='fa fa-trash'></span> Hapus</a></li>
+											            <li><a href='".base_url('returbeli/hapus?id='.$value['id'])."'><span class='fa fa-trash'></span> Hapus</a></li>
 											        </ul>
 										    	</div>
 											</td>

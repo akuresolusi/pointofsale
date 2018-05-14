@@ -46,7 +46,17 @@ class Returbeli extends CI_Controller {
 		return $retur + $uangkembali;
 	}
 
-	function  proses_set_ulang_stok_modal($idbarang, $qty, $harga){
+	function  set_stok_modal($idbarang, $qty, $harga){
+		$barang = $this->barang_model->detail_barang($idbarang);
+		$a = $barang['stok'] * $barang['modal'];
+		$b = $qty * $harga;
+		$c = $barang['stok'] + $qty;
+		$d = ($a + $b) / $c;
+		$this->barang_model->update_modal($idbarang, $d);
+		$this->barang_model->update_stok($idbarang, $c);
+	}
+
+	function  set_stok_modal_kurang($idbarang, $qty, $harga){
 		$barang = $this->barang_model->detail_barang($idbarang);
 		$a = $barang['stok'] * $barang['modal'];
 		$b = $qty * $harga;
@@ -67,10 +77,21 @@ class Returbeli extends CI_Controller {
 											 $value['idbarang'], 
 											 $this->input->post('retur')[$i], 
 											 $value['harga']
-								);
-			$this->proses_set_ulang_stok_modal($value['idbarang'], $this->input->post('retur')[$i],  $value['harga']);
+											);
+			$this->set_stok_modal_kurang($value['idbarang'], $this->input->post('retur')[$i],  $value['harga']);
 			$i++;
 		}
+		redirect(base_url('returbeli'));
+	}
+
+	public function hapus(){
+		$retur = $this->retur_model->detail_retur($this->input->get('id'));
+		$items = $this->retur_model->list_items_retur($retur['id']);
+		foreach ($items as $value) {
+			$this->set_stok_modal($value['idbarang'], $value['qty'], $value['harga']);
+		}
+		$this->retur_model->hapus_retur($retur['id']);
+		$this->retur_model->hapus_retur_items($retur['id']);
 		redirect(base_url('returbeli'));
 	}	
 

@@ -94,8 +94,9 @@ option{
 						    		$i++;
 						    		$barang= $this->barang_model->detail_barang($value['idbarang']);
 						    		$retur_items = $this->retur_model->retur_pembelian_item($faktur['faktur'], $value['idbarang'])['jumlah'];
-						    		if( empty($retur_items) ){ $retur_items = "-"; }
 						    		$max = $value['qty'] - $retur_items ;
+						    		if( empty($retur_items) ){ $retur_items = "-"; }
+						    		
 						    		echo"
 						    		<tr>
 								      	<td>".$i."</td>

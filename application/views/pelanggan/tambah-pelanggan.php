@@ -34,11 +34,12 @@
 				  	</div>
 				    <div class="form-group col-md-4">
 				  		<label>Email</label>
-				  		<input type="email" name="email" class="form-control" placeholder="Email" required="">
+				  		<input type="email" name="email" class="form-control" placeholder="Email">
 				  	</div>
 				  	<div class="form-group col-md-4">
 				    	<label>Kota</label> 
-				    	<select name="kota" class="form-control"  required="">
+				    	<select name="kota" class="form-control">
+				    		<option value="">- Pilih kota -</option>
 					    	<?php
 				    			foreach ($list_kota as $value) {
 				    				echo "<option value='".$value['id']."'>".$value['kota']."</option>";
@@ -58,7 +59,7 @@
 				    </div>
 				    <div class=" form-group col-md-12">
 				  		<label>Alamat</label>
-				  		<textarea name="alamat" class="form-control" placeholder="Alamat"></textarea>
+				  		<textarea name="alamat" class="form-control"></textarea>
 				  	</div>
 				  	
 				    <div  class="form-group col-md-12">

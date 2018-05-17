@@ -142,6 +142,7 @@ class Master_model extends CI_Model {
 
 	public function add_kategori_pelanggan(){
 		$data = array('kategori'=>$this->input->post('kategori'),
+						'harga'=>$this->input->post('harga'),
 						'status'=>1
 			    );
 		$this->db->insert('kategori_pelanggan',$data);
@@ -149,7 +150,9 @@ class Master_model extends CI_Model {
 	}
 
 	public function update_kategori_pelanggan($id){
-		$data = array('kategori' => $this->input->post('kategori'));
+		$data = array('kategori' => $this->input->post('kategori'),
+					  'harga'=>$this->input->post('harga')
+					);
 		$this->db->where('id',$id);
 		$this->db->update('kategori_pelanggan',$data);
 		return;
@@ -166,6 +169,7 @@ class Master_model extends CI_Model {
 		$like = $this->input->post_get('like');
 		if(isset($like)){
 			$this->db->like('kategori',$like);
+			$this->db->or_like('harga',$like);
 		}
 		$this->db->where('status',1);
 		$this->db->order_by('id','DESC');

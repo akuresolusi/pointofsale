@@ -138,6 +138,7 @@ class Barang extends CI_Controller {
 						<li>
 							<span id='id' style='display:none;'>".$row['id']."</span>
 							<span id='kode' style='display:none;'>".$row['kode']."</span>
+							<span id='modal' style='display:none;'>".$row['modal']."</span>
 							<span id='barang'>".$row['nama']."</span></br>
 							<span>Stok :</span>
 							<span><b>".$stok."</b></span><br>
@@ -150,7 +151,7 @@ class Barang extends CI_Controller {
 			}else{
 			
 				$json["status"] = 0;
-				$json["datanya"] = "<ul id='daftar-autocomplete-supplier'>";
+				$json["datanya"] = "<ul id='daftar-autocomplete'>";
 				$json["datanya"] .= "<li data-toggle='modal' data-target='#modal-tambah-barang'>
 										<span> + Data tidak ditemukan, Klik Untuk Tambah Baru +</span>
 									</li>";

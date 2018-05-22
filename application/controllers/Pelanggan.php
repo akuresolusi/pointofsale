@@ -48,4 +48,40 @@ class Pelanggan extends CI_Controller {
 	}
 
 
+	public function cari_pelanggan(){
+		if($this->input->is_ajax_request()){
+			
+			$pelanggan = $this->master_model->list_pelanggan();
+
+			if(count($pelanggan) >= 1){
+			
+				$json["status"] = 1;
+				$json["datanya"] = "<ul id='daftar-autocomplete-pelanggan'>";
+				foreach($pelanggan as $row){
+					$json["datanya"] .= "
+						<li>
+							<span id='id' style='display:none;'>".$row['id']."</span>
+							<span id='nama' style=' text-transform:uppercase;'>".$row['nama']."</span></br>
+							# <span id='alamat' style='font-size:13px;text-transform:capitalize;'>".$row['alamat']."</span>
+							<span style='font-size:13px;'> - ".$row['nohp']."</span>
+						</li>
+					";
+				}
+				$json["datanya"] .= "</ul>";
+
+			}else{
+			
+				$json["status"] = 0;
+				$json["datanya"] = "<ul id='daftar-autocomplete-pelanggan'>";
+				$json["datanya"] .= "<li data-toggle='modal' data-target='#modal-tambah-pelanggan'>
+										<span> + Data tidak ditemukan, Klik Untuk Tambah Baru +</span>
+									</li>";
+				$json["datanya"] .= "</ul>";
+			
+			}
+			echo json_encode($json);
+		}
+	}
+
+
 }

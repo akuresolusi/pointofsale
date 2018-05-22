@@ -28,6 +28,11 @@ class Penjualan_model extends CI_Model {
 		return $this->db->get('pelanggan')->result_array();	
 	}
 
+	public function detail_penjualan($faktur){
+		$this->db->where('faktur',$faktur);
+		return $this->db->get('penjualan')->row_array();
+	}
+
 	public function faktur_terakhir(){
 		$this->db->order_by('id','DESC');
 		$this->db->limit(1);

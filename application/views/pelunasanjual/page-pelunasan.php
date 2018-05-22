@@ -18,33 +18,53 @@
 				  <div class="panel-body">
 						<table id="data" class="table table-striped table-hover">
 							<thead>
-								<th>No. Pelunasan</th>
-								<th>Tgl. Pelunasan</th>
+								<th>No</th>
+								<th>Kode Pelunasan</th>
+								<th>Tanggal</th>
 								<th>Pelanggan</th>
-								<th>Total Pelunasan</th>
-								<th>Sisa Hutang</th>
-								<th>Syarat Pembayaran</th>
+								<th>Jumlah Bayar</th>
+								<th>Biaya Lainya</th>
+								<th>Cara Bayar</th>
 								<th width="10">Aksi</th>
 							</thead>
 							<tbody>
-								<tr>
-									<td>PB-0000008</td>
-									<td>Jan 12, 2018</td>
-									<td>PT. ABC</td>
-									<td>150.000</td>
-									<td>0</td>
-									<td>Cash</td>
-									<td style="text-align: center;">
-									<div class="dropdown">
-								        <a href="#" class="btn btn-primary btn-xs" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" title="Action">Tindakan <span class="caret"></span></a>
-								        <ul class="dropdown-menu pull-right">
-								            <li><a href="#"><span class="fa fa-eye"></span> Lihat Data</a></li>
-								            <li><a href="#"><span class="fa fa-edit"></span> Edit Data</a></li>
-								            <li><a href="#"><span class="fa fa-trash"></span> Hapus Data</a></li>
-								        </ul>
-							    	</div>
-									</td>
-								</tr>
+							<?php
+								$i=0;
+								foreach ($list as $value) {
+									$pelanggan = $this->master_model->detail_pelanggan($value['pelanggan']);
+									$i++;
+									if($value['metode'] == 1){
+										$metode = "Cash";
+									}else if($value['metode'] == 2){
+										$metode = "Bank Transfer";
+									}else if($value['metode'] == 3){
+										$metode = "Cheque";
+									}else if($value['metode'] == 4){
+										$metode = "Credit Card";
+									}else if($value['metode'] == 5){
+										$metode = "Debit Card";
+									}
+									echo"
+									<tr>
+										<td>".$i."</td>
+										<td>".$value['kode']."</td>
+										<td>".date_format(date_create($value['tanggal']),'d M Y')."</td>
+										<td>".$pelanggan['nama']."</td>
+										<td>Rp ".$value['jumlah']."</td>
+										<td>Rp ".$value['lainya']."</td>
+										<td>".$metode."</td>
+										<td style='text-align: center;''>
+										<div class='dropdown'>
+									        <a href='#'' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
+									        <ul class='dropdown-menu pull-right'>
+									            <li><a href='".base_url()."pelunasanjual/details'><span class='fa fa-eye'></span> Lihat Data</a></li>
+									            <li><a href='".base_url()."pelunasanjual/proses_hapus?kode=".$value['kode']."'><span class='fa fa-trash'></span> Hapus Data</a></li>
+									        </ul>
+								    	</div>
+										</td>
+									</tr>";
+								}
+							?>
 							</tbody>
 						</table>	
 					</div>
@@ -52,5 +72,4 @@
 			</div>
 		</div>
 		
-
-			<!-- END MAIN CONTENT -->
+<!-- END MAIN CONTENT -->

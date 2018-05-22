@@ -7,6 +7,12 @@ class Penjualan_model extends CI_Model {
 		$this->load->database();
 	}
 
+	public function list_penjualan(){
+		$this->db->order_by('id','DESC');
+		$this->db->limit(100);
+		return $this->db->get('penjualan')->result_array();
+	}
+
 	public function cari_pelanggan(){
 		$like = $this->input->post_get('like');
 		if(isset($like)){
@@ -25,7 +31,7 @@ class Penjualan_model extends CI_Model {
 	public function faktur_terakhir(){
 		$this->db->order_by('id','DESC');
 		$this->db->limit(1);
-		return $this->db->get('penjualan')->row()->id;
+		return $this->db->get('penjualan')->row()->faktur;
 	}
 
 	public function input_item(){
@@ -47,6 +53,35 @@ class Penjualan_model extends CI_Model {
 
 	public function hapus_item($id){
 		$this->db->where('id', $id);
+		$this->db->delete('penjualan_items');
+		return;
+	}
+
+	public function selesai($tempo){
+		$data = array('faktur'=> $this->input->post('faktur'),
+					  'idsyaratbayar'=> $this->input->post('syaratbayar'),
+					  'tanggal'=> $this->input->post('tanggal'),
+					  'jam'=> date('H:i:s'),
+					  'pajak'=> $this->input->post('pajak'),
+					  'diskon'=> $this->input->post('diskon'),
+					  'lainya'=> $this->input->post('lainnya'),
+					  'catatan'=> $this->input->post('catatan'),
+					  'user'=> $this->session->userdata('id'),
+					  'idpelanggan' => $this->input->post('pelanggan'),
+					  'tempo' => $tempo
+				);
+		$this->db->insert('penjualan',$data);
+		return;
+	}
+
+	public function hapus_penjualan($faktur){
+		$this->db->where('faktur', $faktur);
+		$this->db->delete('penjualan');
+		return;
+	}
+
+	public function hapus_penjualan_items($faktur){
+		$this->db->where('faktur', $faktur);
 		$this->db->delete('penjualan_items');
 		return;
 	}

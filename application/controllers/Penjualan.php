@@ -11,6 +11,7 @@ class Penjualan extends CI_Controller {
 	}
 
 	public function index(){
+		$data['list_penjualan'] = $this->penjualan_model->list_penjualan();
 		$data['isi'] = "penjualan/page-penjualan";
 		$data['title'] = 'Data Penjualan';
 		$this->load->view('layout',$data);
@@ -96,6 +97,35 @@ class Penjualan extends CI_Controller {
 
 	public function hapus_items(){
 		$this->penjualan_model->hapus_item($this->input->post('id'));
+	}
+
+	public function get_total_harga(){
+		$faktur = $this->input->post_get('faktur');
+		$items = $this->penjualan_model->list_items($faktur);
+		$total = 0;
+		foreach ($items as $value) {
+			$total = ( $value['qty'] * $value['harga'] ) + $total;
+		}
+		echo $total;
+	}
+
+	public function selesai(){
+		//Membuat tanggal tempo
+		$syaratbayar = $this->master_model->detail_syaratbayar($this->input->post('syaratbayar'));
+		$tanggal=strtotime(date($this->input->post('tanggal')));
+		$jumlah=$syaratbayar['tempo'];
+		$new = 86400 * $jumlah;
+		$hasil = $tanggal + $new;
+		$tempo = date('Y-m-d', $hasil);
+
+		$this->penjualan_model->selesai($tempo);
+		redirect('penjualan');
+	}
+
+	public function hapus_penjualan(){
+		$this->penjualan_model->hapus_penjualan($this->input->get('faktur'));
+		$this->penjualan_model->hapus_penjualan_items($this->input->get('faktur'));
+		redirect('penjualan');	
 	}
 
 

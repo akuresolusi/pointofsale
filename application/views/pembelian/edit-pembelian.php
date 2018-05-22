@@ -153,6 +153,7 @@ option{
 					  				<td style="padding-left: 0px;">
 					  					<input type="hidden" id="idbarang" >
 					  					<input type="text" name="kode" id="kodebarang" class="form-control" placeholder="Kode Barang">
+					  					<div id="hasilpencarian"></div>
 					  				</td>
 
 					  				<td style="padding-left: 0px;">
@@ -165,10 +166,6 @@ option{
 					  				
 					  				<td style="text-align: right; font-size: 15px; font-weight: bold;" id="stotal">Rp.0</td>
 					  				<td><a id="tambah"><span class="lnr lnr-plus-circle" title="Tambah" style="font-size: 25px; cursor: pointer;"></span></a></td>
-					  			</tr>
-					  			<tr>
-					  				<td colspan="2"><div id="hasilpencarian"></div></td>
-					  				<td colspan="4"></td>
 					  			</tr>
 
 

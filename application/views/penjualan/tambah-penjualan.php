@@ -46,6 +46,7 @@ option{
 
 
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-select.css">
+<?php echo form_open(base_url('penjualan/selesai')); ?>
 <div class="main-content">
 	<div class="container-fluid">
 		<div class="panel panel-default panel-title">
@@ -76,7 +77,7 @@ option{
 				    </div>
 				    <div class="form-group col-md-4">
 				    	<label>Syarat Bayar</label>
-				    	<select class="form-control">
+				    	<select class="form-control" name="syaratbayar" required="">
 				    		<?php
 				    		foreach ($list_syarat_bayar as $value) {
 				    			echo"<option value='".$value['id']."'>".$value['nama']."</option>";
@@ -86,14 +87,14 @@ option{
 				    </div>
 				    <div class="form-group col-md-4">
 				    	<label>Tanggal Faktur</label>
-				      	<input type="date" name="tanggal" value="<?php echo date('Y-m-d') ?>" class="form-control">
+				      	<input type="date" name="tanggal" required="" value="<?php echo date('Y-m-d') ?>" class="form-control">
 				    </div>
 				</div>
 				</div>
 			</div>
 		<div class="panel panel-default">
 		    	<div class="panel-body">
-					<form>
+					
 					  	<div class="col-md-12">
 					  		<table class="table" id="tb" style="margin-top: 20px">
 					  			<!-- THEAD -->
@@ -136,52 +137,62 @@ option{
 					  		
 					  		<div class="col-md-6" style="padding-left: 0; margin-bottom: 20px;">
 					  			<label>Catatan</label>
-					  			<textarea class="form-control" style="height: 185px;"></textarea>
+					  			<textarea class="form-control" style="height: 185px;" name="catatan"></textarea>
 					  		</div>
 					  		<div class="col-md-5" style="float: right;">
 					  				<div class="row d">
 						  				<span id="d-title">TOTAL</span>	
 						  				<span id="sub-number">
-						  					<input type="text" readonly id="subtotal" value="342342" class="form-control" style="width: 240px">
+						  					<input type="text" disabled="" id="total"  class="form-control" style="width: 240px">
 						  				</span>	
-						  			</div>
-						  			<div class="row d">
-						  				<span id="d-title">PAJAK</span>
-						  				<span id="sub-number"><input type="text" id="hargapajak" name=""  class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
-						  				<span id="sub-number"><input type="number" min="0" max="100" class="form-control" style="width: 80px;" id="persenpajak" name="pajak" placeholder="%"></span>
-						  			</div>
-						  			<div class="row d">
-						  				<span id="d-title">DISKON</span>	
-						  				<span id="sub-number"><input type="number" id="hargadiskon" class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>		
-						  				<span id="sub-number"><input type="number" id="persendiskon" name="diskon"  class="form-control" style="width: 80px;" placeholder="%"></span>
 						  			</div>
 						  			<div class="row d">
 						  				<span id="d-title">BIAYA LAINYA</span>	
 						  				<span id="sub-number">
-						  					<input type="number" value="" class="form-control" style="width: 240px">
+						  					<input type="number" id="lainnya" name="lainnya" placeholder="Rp" class="form-control" style="width: 240px;text-align: right;">
 						  				</span>	
+						  			</div>
+						  			<div class="row d">
+						  				<span id="d-title">DISKON</span>	
+						  				<span id="sub-number">
+						  					<input type="number" id="diskon" name="diskon" class="form-control" 
+						  					style="width: 240px; text-align: right;" 
+						  					placeholder="Rp.">
+						  				</span>
+						  			</div>
+						  			<div class="row d">
+						  				<span id="d-title">PAJAK</span>
+						  				<span id="sub-number">
+						  					<input type="text" id="hargapajak"  class="form-control" 
+						  					style="width: 150px; margin-left:  10px; text-align: right;" 
+						  					placeholder="Rp." disabled>
+						  				</span>	
+						  				<span id="sub-number">
+						  					<input type="number" min="0" max="100"  class="form-control" 
+						  					style="width: 80px;" id="pajak" name="pajak" placeholder="%">
+						  				</span>
 						  			</div>
 						  			<div class="row d">
 						  				<span id="d-title">GRAND TOTAL</span>	
 						  				<span id="sub-number">
-						  					<input type="text" readonly id="subtotal" class="form-control" style="width: 240px">
+						  					<input type="text" disabled="" id="grandtotal" class="form-control" style="width: 240px">
 						  				</span>	
 						  			</div>
 					  		</div>
 
 					  		<div  class="form-group col-md-12" style="padding-left: 0;">
 					    	<button type="submit" class="btn btn-primary" style="margin-bottom: 10px;"><span class="fa fa-save"></span> Simpan</button>
-					    	<a href="<?php echo base_url(); ?>pembelian" class="btn btn-warning" style="margin-bottom: 10px;""><span class="fa fa-list"></span> Daftar Pembelian</a>
+					    	<a href="<?php echo base_url(); ?>penjualan" class="btn btn-warning" style="margin-bottom: 10px;""><span class="fa fa-list"></span> Daftar Penjualan</a>
 					    	<button type="reset" class="btn btn-danger" style="margin-bottom: 10px;"> <span class="fa fa-remove"></span> Batal</button>
 						</div>
 					  	</div>
 					  </div>
-					</form>
 			    </div>
 			</div>
 		</div>
 	</div>
 </div>
+<?php echo form_close(); ?>
 
 
 
@@ -193,6 +204,15 @@ option{
 
 <script src="<?php echo base_url(); ?>assets/js/bootstrap-select.js"></script>
 <script type="text/javascript">
+
+	$(document).ready(function() {
+		$(window).keydown(function(event){
+			if(event.keyCode == 13) {
+			  event.preventDefault();
+			  return false;
+			}
+		});
+	});
 	
 	function cari_pelangan(){
 		var keyword = $("#caripelanggan").val();
@@ -345,11 +365,11 @@ option{
 	});
 
 
-	$(document).on('keyup', '#qty', function(e){
+	$(document).on('change', '#qty', function(e){
 		$("#subtotal").html($("#qty").val() * $("#harga").val());
 	});
 
-	$(document).on('keyup', '#harga', function(e){
+	$(document).on('change', '#harga', function(e){
 		$("#subtotal").html($("#qty").val() * $("#harga").val());
 	});
 
@@ -375,6 +395,7 @@ option{
 				success: function(data){
 					hapus_form();
 					list_items();
+					get_total()
 				}
 			});
 		}
@@ -404,9 +425,69 @@ option{
 			data: "id=" + id,
 			success: function(){
 				list_items();
-				alert('Item dihapus');
+				get_total();
 			}
 		});
 	});
+
+	function get_total(){
+		var faktur = $("#faktur").val();
+		$.ajax({
+			url: "<?php echo base_url(); ?>penjualan/get_total_harga",
+			type: "post",
+			cache: false,
+			data: "faktur=" + faktur,
+			success: function(data){
+				$("#total").val(data);
+				hitung_form()
+			}
+		});
+	}
+	get_total();
+
+	function hitung_form(){
+		var total = $("#total").val();
+		var lainnya = $("#lainnya").val();
+		var diskon = $("#diskon").val();
+		var pajak =  $("#pajak").val();
+		if(lainnya){
+			total = parseInt(total) + parseInt(lainnya); 
+		}
+		if(diskon){
+			total = total - diskon; 
+		}
+		if(pajak){
+			var hp = (total / 100) * pajak;
+			$("#hargapajak").val(hp.toFixed(0));	
+		}else{
+			$("#hargapajak").val('');
+		}
+		if(hp){
+			$("#grandtotal").val(parseInt(total) + parseInt(hp));
+		}else{
+			$("#grandtotal").val(total);
+		}
+	}
+
+	$(document).on('change', '#pajak', function(e){
+		hitung_form()
+	});
+	$(document).on('change', '#lainnya', function(e){
+		hitung_form()
+	});
+	$(document).on('change', '#diskon', function(e){
+		hitung_form()
+	});
+
+	$(document).on('keyup', '#pajak', function(e){
+		hitung_form()
+	});
+	$(document).on('keyup', '#lainnya', function(e){
+		hitung_form()
+	});
+	$(document).on('keyup', '#diskon', function(e){
+		hitung_form()
+	});
+
 
 </script>

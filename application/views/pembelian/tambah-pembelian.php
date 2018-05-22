@@ -188,7 +188,7 @@ option{
 						  			</div>
 						  			<div class="row d">
 						  				<span id="d-title">PAJAK</span>
-						  				<span id="sub-number"><input type="text" id="hargapajak" name=""  class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
+						  				<span id="sub-number"><input type="text" id="hargapajak"   class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
 						  				<span id="sub-number"><input type="number" min="0" max="100" class="form-control" style="width: 80px;" id="persenpajak" name="pajak" placeholder="%"></span>
 						  			</div>
 						  			<div class="row d">

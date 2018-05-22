@@ -18,35 +18,46 @@
 				  <div class="panel-body">
 						<table id="data" class="table table-striped table-hover">
 							<thead>
-								<th>Tgl. Penjualan</th>
-								<th>Nama Pelanggan</th>
-								<th>Tgl. Jatuh Tempo</th>
-								<th>Total Penjualan</th>
+								<th>No</th>
+								<th>Faktur</th>
+								<th>Pelanggan</th>
+								<th>Total Faktur</th>
 								<th>Total Hutang</th>
 								<th>Syarat Pemabayaran</th>
-								<th>Status</th>
+								<th>Tgl Faktur</th>
+								<th>Jatuh Tempo</th>
 								<th width="10">Aksi</th>
 							</thead>
 							<tbody>
-								<tr>
-									<td>24 Januari 2018</td>
-									<td>Firman</td>
-									<td>23 Februari 2018</td>
-									<td>1.000.000</td>
-									<td>1.000.000</td>
-									<td>30 Hari</td>
-									<td>Belum Lunas</td>
-									<td style="text-align: center;">
-									<div class="dropdown">
-								        <a href="#" class="btn btn-primary btn-xs" data-toggle="dropdown" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false" title="Action">Tindakan <span class="caret"></span></a>
-								        <ul class="dropdown-menu pull-right">
-								            <li><a href="#"><span class="fa fa-eye"></span> Lihat Data</a></li>
-								            <li><a href="#"><span class="fa fa-edit"></span> Edit Data</a></li>
-								            <li><a href="#"><span class="fa fa-trash"></span> Hapus Data</a></li>
-								        </ul>
-							    	</div>
-									</td>
-								</tr>
+							<?php
+								$i=0;
+								foreach ($list_penjualan as $value) {
+									$pelanggan = $this->master_model->detail_pelanggan($value['idpelanggan']);
+									$syaratbayar = $this->master_model->detail_syaratbayar($value['idsyaratbayar']);
+									$i++;
+									echo"
+									<tr>
+										<td>".$i."</td>
+										<td>FP-".$value['faktur']."</td>
+										<td>".$pelanggan['nama']."</td>
+										<td></td>
+										<td></td>
+										<td>".$syaratbayar['nama']."</td>
+										<td>".date_format(date_create($value['tanggal']),'d M Y')."</td>
+										<td>".date_format(date_create($value['tempo']),'d M Y')."</td>
+										<td style='text-align: center;'>
+										<div class='dropdown'>
+									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
+									        <ul class='dropdown-menu pull-right'>
+									            <li><a href='#'><span class='fa fa-eye'></span> Lihat Data</a></li>
+									            <li><a href='#'><span class='fa fa-edit'></span> Edit Data</a></li>
+									            <li><a href='".base_url('penjualan/hapus_penjualan?faktur='.$value['faktur'])."'><span class='fa fa-trash'></span> Hapus Data</a></li>
+									        </ul>
+								    	</div>
+										</td>
+									</tr>";
+								}
+							?>
 							</tbody>
 						</table>	
 					</div>

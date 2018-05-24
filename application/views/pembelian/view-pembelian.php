@@ -4,10 +4,9 @@
 	foreach ($items as $value) {
 		$subtotal = $subtotal + $value['qty'] * $value['harga'];
 	}
-
-	$hpajak = ($subtotal / 100) * $detail['pajak'];
-	$hdiskon = ($subtotal / 100) * $detail['diskon'];
-	$gtotal = $subtotal + $hpajak - $hdiskon;
+	$total = ($subtotal + $detail['lainya']) - $detail['diskon'];
+	$hpajak = ($total / 100) * $detail['pajak'];
+	$gtotal = $total + $hpajak;
 ?>
 <style>
 .hide{
@@ -94,20 +93,24 @@ option{
 					  		</table>
 					  		<div class="col-md-6" style="padding-left: 0; margin-bottom: 20px;">
 					  			<label>Catatan</label>
-					  			<p><?php echo $detail['catatan']; ?></p>
+					  			<textarea class="form-control" style="height: 145px"><?php echo $detail['catatan']; ?> </textarea>
 					  		</div>
 					  		<div class="col-md-5" style="float: right;">
 					  			<div class="row d">
 					  				<span id="d-title">Sub Total</span>	
 					  				<span id="sub-number">Rp. <?php echo $subtotal; ?></span>	
 					  			</div>
+								<div class="row d">
+					  				<span id="d-title">Biaya Lainnya</span>	
+					  				<span id="sub-number">Rp. <?php echo $detail['lainya']; ?></span>	
+					  			</div>					  			
+					  			<div class="row d">
+					  				<span id="d-title">Diskon</span>	
+					  				<span id="sub-number">Rp. <?php echo $detail['diskon']; ?></span>	
+					  			</div>
 					  			<div class="row d">
 					  				<span id="d-title">Pajak (<?php echo $detail['pajak']; ?>%)</span>	
 					  				<span id="sub-number">Rp. <?php echo $hpajak; ?></span>	
-					  			</div>
-					  			<div class="row d">
-					  				<span id="d-title">Diskon (<?php echo $detail['diskon']; ?>%)</span>	
-					  				<span id="sub-number">Rp. <?php echo $hdiskon; ?></span>	
 					  			</div>
 					  			<div class="row d">
 					  				<span id="gt-title">Grand Total</span>			

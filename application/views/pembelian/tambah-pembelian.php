@@ -146,6 +146,7 @@ option{
 					  				<td style="padding-left: 0px;">
 					  					<input type="hidden" id="idbarang" >
 					  					<input type="text" name="kode" id="kodebarang" class="form-control" placeholder="Kode Barang" >
+					  					<div id="hasilpencarian"></div>
 					  				</td>
 
 					  				<td style="padding-left: 0px;">
@@ -158,10 +159,6 @@ option{
 					  				
 					  				<td style="text-align: right; font-size: 15px; font-weight: bold;" id="stotal">Rp.0</td>
 					  				<td><a id="tambah"><span class="lnr lnr-plus-circle" title="Tambah" style="font-size: 25px; cursor: pointer;"></span></a></td>
-					  			</tr>
-					  			<tr>
-					  				<td colspan="2"><div id="hasilpencarian"></div></td>
-					  				<td colspan="4"></td>
 					  			</tr>
 
 
@@ -182,19 +179,22 @@ option{
 						  			<div class="row d">
 						  				<span id="d-title">SUB TOTAL</span>	
 						  				<span id="sub-number">
-						  					<input type="hidden" id="subtotal" value="">
+						  					<input type="hidden" id="total" value="">
 						  					<span id="view_subtotal"></span>
 						  				</span>	
 						  			</div>
 						  			<div class="row d">
-						  				<span id="d-title">PAJAK</span>
-						  				<span id="sub-number"><input type="text" id="hargapajak"   class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
-						  				<span id="sub-number"><input type="number" min="0" max="100" class="form-control" style="width: 80px;" id="persenpajak" name="pajak" placeholder="%"></span>
+						  				<span id="d-title">BIAYA LAINNYA</span>	
+						  				<span id="sub-number"><input type="number" id="lainnya" name="lainnya" class="form-control" style="width: 240px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>
 						  			</div>
 						  			<div class="row d">
 						  				<span id="d-title">DISKON</span>	
-						  				<span id="sub-number"><input type="text" id="hargadiskon" class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>		
-						  				<span id="sub-number"><input type="number" id="persendiskon" name="diskon"  class="form-control" style="width: 80px;" placeholder="%"></span>
+						  				<span id="sub-number"><input type="number" id="diskon" name="diskon" class="form-control" style="width: 240px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>
+						  			</div>
+						  			<div class="row d">
+						  				<span id="d-title">PAJAK</span>
+						  				<span id="sub-number"><input type="text" id="hargapajak"   class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
+						  				<span id="sub-number"><input type="number" min="0" max="100" class="form-control" style="width: 80px;" id="pajak" name="pajak" placeholder="%"></span>
 						  			</div>
 						  			<div class="row d">
 						  				<span id="gt-title">GRAND TOTAL</span>			
@@ -405,7 +405,6 @@ option{
 		        	if(result == ""){
 		        		clear_form_item();
 			        	get_items();
-			        	reload_data();
 					}else{
 						alert(result);
 						clear_form_item();
@@ -426,6 +425,18 @@ option{
 		$("#stotal").html('Rp.0');
 	}
 
+	$("#qty").change(function() {
+		var qty 	= $("#qty").val();
+		var harga 	= $("#harga").val();
+		$("#stotal").html("Rp." + (qty * harga));
+	});
+
+	$("#harga").change(function() {
+		var qty 	= $("#qty").val();
+		var harga 	= $("#harga").val();
+		$("#stotal").html("Rp." + (qty * harga));
+	});
+
 
 	function get_items(){
 		var faktur = $("#faktur").val();
@@ -435,7 +446,7 @@ option{
 			url: '<?php echo base_url(); ?>pembelian/list_items',
 	        success: function(html){
 	        	$("#items").html(html);
-	        	reload_data();
+	        	get_subtotal();
 	        }
         }); 
 	}
@@ -449,9 +460,9 @@ option{
 			data: "faktur=" + faktur,
 			url: '<?php echo base_url(); ?>pembelian/subtotal',
 	        success: function(result){
-	        	$("#subtotal").val(result);
+	        	$("#total").val(result);
 	        	$("#view_subtotal").html("Rp. " + result);
-	        	grand_total();
+	        	hitung_form();
 	        }
         });
 	}
@@ -465,73 +476,53 @@ option{
 			url: '<?php echo base_url(); ?>pembelian/delete_items',
 			success: function(){
 				get_items();
-				reload_data();
+				hitung_form();
 			}
     	}); 
 	}
 
-	function get_harga_pajak(){
-		var subtotal 	= $("#subtotal").val();
-		var nilai 		= $("#persenpajak").val();
-		var hasil 	 	= subtotal / 100 * nilai;
-		$("#hargapajak").val(hasil.toFixed(0));
+	function hitung_form(){
+		var total = $("#total").val();
+		var lainnya = $("#lainnya").val();
+		var diskon = $("#diskon").val();
+		var pajak =  $("#pajak").val();
+		if(lainnya){
+			total = parseInt(total) + parseInt(lainnya); 
+		}
+		if(diskon){
+			total = total - diskon; 
+		}
+		if(pajak){
+			var hp = (total / 100) * pajak;
+			$("#hargapajak").val(hp.toFixed(0));	
+		}else{
+			$("#hargapajak").val('');
+		}
+		if(hp){
+			$("#grandtotal").html(parseInt(total) + parseInt(hp));
+		}else{
+			$("#grandtotal").html(total);
+		}
 	}
 
-	function get_harga_diskon(){
-		var subtotal 	= $("#subtotal").val();
-		var nilai 		= $("#persendiskon").val();
-		var hasil 	 	= subtotal / 100 * nilai;
-		$("#hargadiskon").val(hasil.toFixed(0));
-	}
-
-	function get_persen_diskon(){
-		var subtotal 	= $("#subtotal").val();
-		var nilai 		= $("#hargadiskon").val();
-		var hasil 	 	= 100 / subtotal * nilai;
-		$("#persendiskon").val(hasil.toFixed(1));
-	}
-
-	$("#persenpajak").change(function() {
-		// get_harga_pajak();
-		// grand_total();
-		reload_data();
+	$(document).on('change', '#pajak', function(e){
+		hitung_form()
+	});
+	$(document).on('change', '#lainnya', function(e){
+		hitung_form()
+	});
+	$(document).on('change', '#diskon', function(e){
+		hitung_form()
 	});
 
-	$("#persendiskon").change(function() {
-		// get_haga_diskon();
-		// grand_total();
-		reload_data();
+	$(document).on('keyup', '#pajak', function(e){
+		hitung_form()
 	});
-
-	$("#hargadiskon").change(function() {
-		get_persen_diskon();
-		grand_total();
+	$(document).on('keyup', '#lainnya', function(e){
+		hitung_form()
 	});
-
-	function grand_total(){
-		var subtotal 		= $("#subtotal").val();
-		var harga_diskon 	= subtotal / 100 * $("#persendiskon").val();
-		var harga_pajak		= subtotal / 100 * $("#persenpajak").val();
-		var hasil 			= parseInt(subtotal) - parseInt(harga_diskon) + parseInt(harga_pajak); 
-		$("#grandtotal").html("Rp. " + hasil);
-	}
-
-	function reload_data(){
-		get_subtotal();
-		get_harga_pajak();
-		get_harga_diskon();
-	}
-
-	$("#qty").change(function() {
-		var qty 	= $("#qty").val();
-		var harga 	= $("#harga").val();
-		$("#stotal").html("Rp." + (qty * harga));
-	});
-
-	$("#harga").change(function() {
-		var qty 	= $("#qty").val();
-		var harga 	= $("#harga").val();
-		$("#stotal").html("Rp." + (qty * harga));
+	$(document).on('keyup', '#diskon', function(e){
+		hitung_form()
 	});
 
 

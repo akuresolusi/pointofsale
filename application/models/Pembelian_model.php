@@ -71,6 +71,7 @@ class Pembelian_model extends CI_Model {
 						"referensi"=>$this->input->post('referensi'),
 						"tanggal"=>$this->input->post('tanggal'),
 						"idsyaratbayar"=>$this->input->post('syaratbayar'),
+						"lainya"=>$this->input->post('lainnya'),
 						"tempo"=>$tempo,
 						"pajak"=>$pajak,
 						"diskon"=>$diskon,

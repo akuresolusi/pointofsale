@@ -61,16 +61,22 @@ option{
 				<div class="panel-body title-pos body-blue">
 					<div class="col-md-12">
 					<div class="form-group col-md-4">
-					    <label>Pelanggan</label> <br/>
+					    <label>Pelanggan</label>
 					    <input type="hidden" id="idpelanggan" name="pelanggan">
 					    <input type="hidden" value="<?php echo $faktur; ?>" name="faktur" id="faktur">
 					    <input type="text" class="form-control" id="namapelanggan" placeholder="Klik untuk memilih pelangan"  required="">
 					</div>
 					<div class="form-group col-md-8">
 				    	<label>Alamat</label>
-				    	<textarea class="form-control" id="alamatpelanggan" style="height: 35px" readonly>-</textarea>
+				    	<input type="text" class="form-control" id="alamatpelanggan" readonly="">
 				    </div>
-				    <div class="form-group col-md-4">
+				    
+				</div>
+				</div>
+			</div>
+		<div class="panel panel-default">
+		    	<div class="panel-body">
+						<div class="form-group col-md-4">
 				    	<label>Kategori</label>
 				    	<input type="text" id="kategoripelanggan" value="-" class="form-control" readonly>
 				    	<input type="hidden" id="kategoriharga">
@@ -89,12 +95,6 @@ option{
 				    	<label>Tanggal Faktur</label>
 				      	<input type="date" name="tanggal" required="" value="<?php echo date('Y-m-d') ?>" class="form-control">
 				    </div>
-				</div>
-				</div>
-			</div>
-		<div class="panel panel-default">
-		    	<div class="panel-body">
-					
 					  	<div class="col-md-12">
 					  		<table class="table" id="tb" style="margin-top: 20px">
 					  			<!-- THEAD -->
@@ -123,11 +123,11 @@ option{
 					  				<td>
 					  					<input type="number" id="harga" min="0" class="form-control" placeholder="Rp." style="text-align: right;">
 					  				</td>
-					  				<td style="text-align: right;">
-					  					Rp <span id="subtotal"></span>
+					  				<td style="text-align: right; font-weight: bolder;">
+					  					Rp. <span id="subtotal"></span>
 					  				</td>
 					  				<td>
-					  					<span class="fa fa-plus" id="tambah-item" style="font-size: 25px; color:#3498DB"></span>
+					  					<a id="tambah-item"><span class="lnr lnr-plus-circle" style="font-size: 25px; color:#3498DB; cursor: pointer;"></span></a>
 					  				</td>
 					  			</tr>
 					  			<!-- TBODY -->

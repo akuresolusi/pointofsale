@@ -17,6 +17,11 @@ class Penjualan extends CI_Controller {
 		$this->load->view('layout',$data);
 	}
 
+	public function details(){
+		$data['isi'] = "penjualan/view-penjualan";
+		$data['title'] = 'Lihat Data Penjualan';
+		$this->load->view('layout',$data);
+	}
 	public function tambah(){
 		$data['faktur'] = @$this->penjualan_model->faktur_terakhir() + 1;
 		$data['list_syarat_bayar'] = $this->master_model->list_syaratbayar();
@@ -89,7 +94,7 @@ class Penjualan extends CI_Controller {
 	  				<td>Rp ".$value['harga']."</td>
 	  				<td style='text-align: right;'>Rp ".$subtotal."</td>
 	  				<td>
-	  					<span class='fa fa-remove hapus-item' id-item='".$value['id']."' style='font-size: 20px; color: red;'></span>
+	  					<span class='lnr lnr-cross-circle hapus-item' id-item='".$value['id']."' style='font-size: 20px; color: red; cursor:pointer;'></span>
 	  				</td>
 	  			</tr>";
 		}

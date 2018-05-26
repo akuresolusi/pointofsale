@@ -29,7 +29,11 @@ class Penjualan extends CI_Controller {
 		$data['title'] = 'Tambah Data Penjualan';
 		$this->load->view('layout',$data);	
 	}
-
+	public function edit(){
+		$data['isi'] = "penjualan/update-penjualan";
+		$data['title'] = 'Perbarui Data Penjualan';
+		$this->load->view('layout',$data);
+	}
 	public function cari_pelanggan(){
 			$pelanggan = $this->penjualan_model->cari_pelanggan();
 			$json["datanya"] = "";

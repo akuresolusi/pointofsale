@@ -50,7 +50,7 @@
 									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
 									        <ul class='dropdown-menu pull-right'>
 									            <li><a href='".base_url()."penjualan/details'><span class='fa fa-eye'></span> Lihat Data</a></li>
-									            <li><a href='#'><span class='fa fa-edit'></span> Edit Data</a></li>
+									            <li><a href='".base_url()."penjualan/edit'><span class='fa fa-edit'></span> Edit Data</a></li>
 									            <li><a href='".base_url('penjualan/hapus_penjualan?faktur='.$value['faktur'])."'><span class='fa fa-trash'></span> Hapus Data</a></li>
 									        </ul>
 								    	</div>

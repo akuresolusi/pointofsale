@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Point Of Sale &mdash; Akure Solusi</title>
+	<title>Sales Order &mdash; Akure Solusi</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -57,131 +57,8 @@
   </div>
 </nav> 
 	<div class="container-fluid">
-		<div class="col-md-8" style="margin:-10px; margin-bottom: 30px;">
-			<!-- PENCARIAN -->
-			<div class="col-md-12" style="padding: 5px 5px 0px 5px;">
-				<form class="search" action="#">
-		          <div class="input-group stylish-input-group">
-		            <input type="text" class="form-control" id="custom-search"  placeholder="Cari Barang atau Scan" >
-		              <span class="input-group-addon" id="custom-search">
-		                <button type="submit">
-		                    <span class="fa fa-search" title="Cari"></span>
-		                </button>  
-		                <button type="submit" > 
-		                    <span class="fa fa-barcode" title="Scan"></span>
-		                </button>  
-		              </span>
-		            </div>
-		          </form>
-			</div>
-			<!-- END -->
-
-			
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/1.png" class="img-responsive">
-					</div>
-					<span class="title">Kemeja Lengan Panjang</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/2.png" class="img-responsive">
-					</div>
-					<span class="title">Topi</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/3.png" class="img-responsive">
-					</div>
-					<span class="title">Hoodie</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/4.png" class="img-responsive">
-					</div>
-					<span class="title">Kemeja Lengan Pendek</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/5.png" class="img-responsive">
-					</div>
-					<span class="title">Tank Top</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/6.png" class="img-responsive">
-					</div>
-					<span class="title">Jeans Wanita</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/7.png" class="img-responsive">
-					</div>
-					<span class="title">Kaos</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<!-- PRODUCT -->
-			<a href="#">
-			<div class="col-md-3 col-sm-6 item">
-				<div class="product">
-					<div class="img-item">
-						<img src="<?php echo base_url();?>assets/img/product/8.png" class="img-responsive">
-					</div>
-					<span class="title">Jas Formal</span>
-				</div>
-			</div>
-			</a>
-			<!-- END PRODUCT -->
-			<nav>
-			  <ul class="pager">
-			    <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-			    <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-			  </ul>
-			</nav>
-		</div>
-		<div class="col-md-4">
-			<div class="panel panel-headline custom-panel">
+		<div class="col-md-12">
+			<div class="panel panel-headline custom-panel" style="margin-top: 0px;">
 				<div class="panel-body">
 					<div class="add-cust">
 						<span class="ti-user"></span><a href="" id="user"> Customer Baru</a>
@@ -191,15 +68,15 @@
 							<span id="right-list" style="font-size: 25px; color: #3f51b5;">Rp. 10.000</span>
 					</div>
 					<div class="list-product" id="wrapper">
-						<table class="table" id="custom-table">
+						<table class="table" id="custom-table" style="width: 99%">
 							<tbody>
 								<tr>
 									<td width="10">1.</td>
-									<td width="200">Kemeja Lengan Pendek</td>
-									<td>
+									<td width="600">Kemeja Lengan Pendek</td>
+									<td width="295">
     								<input type="number" class="form-control qty"  value="1">
 									</td>
-									<td width="130">Rp. 10.000</td>
+									<td width="295">Rp. 10.000</td>
 									<td width="50"><a href="#"><span class="lnr lnr-trash remove" title="Hapus"></span></a></td>
 								</tr>
 								<tr>

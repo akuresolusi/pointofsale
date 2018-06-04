@@ -61,38 +61,7 @@
 				                </a>
 				            </div>
 				        </div>
-						<div class="col-md-3 col-sm-6 ">
-				            <div class="service-box">
-				            	<a href="">
-					                <div class="service-icon">
-					                    <div class="front-content">
-					                        <i class="fa fa-money"></i>
-					                        <h3>Pelunasan Pembelian</h3>
-					                    </div>
-					                </div>
-					                <div class="service-content">
-					                    <h3>Pelunasan Pembelian</h3>
-					                    <p>Menampilkan laporan untuk Pelunasan Pembelian.</p>
-					                </div>
-				                </a>
-				            </div>
-				        </div>
-				        <div class="col-md-3 col-sm-6 ">
-				            <div class="service-box">
-				            	<a href="">
-					                <div class="service-icon">
-					                    <div class="front-content">
-					                        <i class="fa fa-money"></i>
-					                        <h3>Pelunasan Penjualan</h3>
-					                    </div>
-					                </div>
-					                <div class="service-content">
-					                    <h3>Pelunasan Penjualan</h3>
-					                    <p>Menampilkan laporan untuk Pelunasan Pembelian.</p>
-					                </div>
-				                </a>
-				            </div>
-				        </div>
+						
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
 				            	<a href="">
@@ -169,6 +138,38 @@
 					                <div class="service-content">
 					                    <h3>Piutang</h3>
 					                    <p>Menampilkan laporan untuk Data Piutang.</p>
+					                </div>
+				                </a>
+				            </div>
+				        </div>
+				        <div class="col-md-3 col-sm-6 ">
+				            <div class="service-box">
+				            	<a href="">
+					                <div class="service-icon">
+					                    <div class="front-content">
+					                        <i class="fa fa-money"></i>
+					                        <h3>Pelunasan Pembelian</h3>
+					                    </div>
+					                </div>
+					                <div class="service-content">
+					                    <h3>Pelunasan Pembelian</h3>
+					                    <p>Menampilkan laporan untuk Pelunasan Pembelian.</p>
+					                </div>
+				                </a>
+				            </div>
+				        </div>
+				        <div class="col-md-3 col-sm-6 ">
+				            <div class="service-box">
+				            	<a href="">
+					                <div class="service-icon">
+					                    <div class="front-content">
+					                        <i class="fa fa-money"></i>
+					                        <h3>Pelunasan Penjualan</h3>
+					                    </div>
+					                </div>
+					                <div class="service-content">
+					                    <h3>Pelunasan Penjualan</h3>
+					                    <p>Menampilkan laporan untuk Pelunasan Pembelian.</p>
 					                </div>
 				                </a>
 				            </div>

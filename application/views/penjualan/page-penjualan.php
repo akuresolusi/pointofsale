@@ -4,7 +4,7 @@
 			<div class="panel panel-default panel-title">
 				<div class="panel-body title-pos">
 					<div class="col-md-6" style="padding: 0;">
-						<span id="sub-title">Pembelian</span>
+						<span id="sub-title">Penjualan</span>
 						<h3 class="page-title"><?php echo $title; ?></h3>
 					</div>
 					<div class="col-md-6 add-data">

@@ -1,94 +1,93 @@
-
 .tab-content{
-	background: #fff;
-	margin-bottom: 50px;
+    background: #fff;
+    margin-bottom: 50px;
 }
 .btn-action{
-	margin-bottom: 20px;
-	margin-top: -10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
 }
 .btn-xs{
-	padding: 3px 8px;
+    padding: 3px 8px;
 }
 .btn-add{
-	float: right;
-	padding:10px 40px;
-	font-size: 14px;
-	margin-right: -17px;
+    float: right;
+    padding:10px 40px;
+    font-size: 14px;
+    margin-right: -17px;
 }
 .add-data{
-	padding-top: 17px;
-	float: right;
+    padding-top: 17px;
+    float: right;
 }
 
 .page-title h3{
-	padding: 0;
-	margin: 0;
-	font-size:18px;
+    padding: 0;
+    margin: 0;
+    font-size:18px;
 }
 table{
-	font-size: 14px;
-	border-top: 2px solid #a9dbff; 
+    font-size: 14px;
+    border-top: 2px solid #a9dbff; 
 }
 .modal-title{
-	text-transform: uppercase;
-	font-weight: 600;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 .body-blue{
-	background: #e7f5ff;
-	border-top: 2px solid #a9dbff;
+    background: #e7f5ff;
+    border-top: 2px solid #a9dbff;
 }
 .d{
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 #d-title{
-	font-size: 16px;
-	font-weight: bold;
-	text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 #d-total{
-	font-size: 20px;
-	font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
 #sub-number{
-	float: right;
-	font-size: 18px;
-	font-weight: bold;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
 }
 #gt-title{
-	font-size: 23px;
-	font-weight: bold;
-	text-transform: uppercase;
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 #grand-total{
-	float: right;
-	font-size: 25px;
-	font-weight: bold;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 #sub-total, #desc{
-	float: right;
-	margin-top: 15px;
-	font-size: 28px;
-	font-weight: bold;
+    float: right;
+    margin-top: 15px;
+    font-size: 28px;
+    font-weight: bold;
 }
 .title-pos{
-	padding-top: -10px;
+    padding-top: -10px;
 }
 .panel-title{
-	margin: -25px -15px 15px -17px;
-	padding-top:15px;
-	border:0;
+    margin: -25px -15px 15px -17px;
+    padding-top:15px;
+    border:0;
 }
 #sub-title{
-	color: #999;
-	font-weight: 600;
+    color: #999;
+    font-weight: 600;
 }
 .group{
-	margin:10px 0 10px 22px; font-weight: 600; text-transform: uppercase; font-size: 13px;
+    margin:10px 0 10px 22px; font-weight: 600; text-transform: uppercase; font-size: 13px;
 }
 .nopadding{
-	padding: 0;
+    padding: 0;
 }
 /*LAPORAN*/
 .service-box{
@@ -101,7 +100,7 @@ table{
     border-radius: 5px;
 }
 .service-box a{
-	color: #676a6d;
+    color: #676a6d;
 }
 .service-icon{
     width: 100%;
@@ -180,3 +179,4 @@ table{
     transform: rotateX(0);
 }
 /*END LAPORAN*/
+

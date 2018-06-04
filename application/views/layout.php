@@ -29,14 +29,6 @@
 	<!-- ICONS -->
 	<meta name="theme-color" content="#3498db">
 	<link rel="icon" sizes="192x192" href="<?php echo base_url() ?>assets/img/favicon.png">
-	<style>
-            .sub-menu {
-                display: none;
-            }
-            .active {
-                background-color: #f3f5f8;
-            }
-        </style>
 </head>
 <body>
 	<!-- WRAPPER -->
@@ -53,7 +45,7 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="log"><img src="<?php echo base_url(); ?>assets/img/img-user.png" class="img-circle" alt="Avatar"> Hi, Firman</a>
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="log">Hi, Firman &nbsp; &nbsp;<img src="<?php echo base_url(); ?>assets/img/img-user.png" class="img-circle" alt="Avatar"></a>
 			          <ul class="dropdown-menu">
 			            <li><a href="#"><span class="ti-user"></span> Profile Saya</a></li>
 			            <li><a href="#"><span class="ti-lock"></span> Ganti Password</a></li>
@@ -70,8 +62,8 @@
 			<div id="scroll">
 				<nav>
 					<ul class="nav">
-						<li class="group">Dashboard</li>
 						<li><a href="<?php echo base_url(); ?>dashboard"><i class="ti-dashboard red"></i> <span>Dashboard</span></a></li>
+						<li><a href="<?php echo base_url() ?>laporan"><i class="ti-agenda brown"></i> <span>Laporan</span></a></li>
 						<li class="group">Barang</li>
 						<li><a href="<?php echo base_url() ?>barang"><i class="ti-package blue"></i> <span>Data Barang</span></a></li>
 						<li class="group">Transaksi</li>
@@ -96,6 +88,7 @@
 							</div>
 						</li>
 						<li><a href="<?php echo base_url() ?>pos" target="_blank"><i class="ti-credit-card red"></i> <span>Point Of Sale</span></a></li>
+						<li><a href="<?php echo base_url() ?>salesorder" target="_blank"><i class="ti-shopping-cart blue"></i> <span>Sales Order</span></a></li>
 						<li><a href="<?php echo base_url() ?>catalog" target="_blank"><i class="ti-shopping-cart red"></i> <span>Catalog</span></a></li>
 						<!-- <li><a href="<?php echo base_url() ?>shop" target="_blank"><i class="ti-shopping-cart purple-1"></i> <span>eCommerce</span></a></li> -->
 						<li><a href="#"><i class="ti-agenda orange"></i> <span>Biaya Beban</span></a></li>
@@ -119,9 +112,6 @@
 								</ul>
 							</div>
 						</li>
-						<li class="group">Laporan</li>
-						<li><a href="<?php echo base_url() ?>laporan"><i class="ti-agenda brown"></i> <span>Laporan</span></a></li>
-
 					</ul>
 				</nav>
 			</div>
@@ -186,47 +176,6 @@
 	    color:'#ccc'
 	    });
 	});
-	</script>
-	<script>
-		$(".icon-submenu li").on("click",function(){
-
-            $(".icon-submenu li").removeClass("active");
-
-            $(this).addClass("active");
-
-	})
-	</script>
-	<script>
-		jQuery(function ($) {
-    $("ul a")
-        .click(function(e) {
-            var link = $(this);
-
-            var item = link.parent("li");
-            
-            if (item.hasClass("active")) {
-                item.removeClass("active").children("a").removeClass("active");
-            } else {
-                item.addClass("active").children("a").addClass("active");
-            }
-
-            if (item.children("ul").length > 0) {
-                var href = link.attr("href");
-                link.attr("href", "#");
-                setTimeout(function () { 
-                    link.attr("href", href);
-                }, 300);
-                e.preventDefault();
-            }
-        })
-        .each(function() {
-            var link = $(this);
-            if (link.get(0).href === location.href) {
-                link.addClass("active").parents("li").addClass("active");
-                return false;
-            }
-        });
-});
 	</script>
 	
 </body>

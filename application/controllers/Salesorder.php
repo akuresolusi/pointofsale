@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pos extends CI_Controller {
+class Salesorder extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -10,6 +10,6 @@ class Pos extends CI_Controller {
 
 	public function index(){
 		$data['title'] = 'Point Of Sale';
-		$this->load->view('pos/page-pos',$data);
+		$this->load->view('salesorder/page-salesorder',$data);
 	}
 }

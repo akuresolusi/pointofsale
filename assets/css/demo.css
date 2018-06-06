@@ -180,3 +180,144 @@ table{
 }
 /*END LAPORAN*/
 
+/*SALES ORDER*/
+.progress {
+    position: relative;
+    height: 25px;
+}
+.progress > .progress-type {
+    position: absolute;
+    left: 0px;
+    font-weight: 800;
+    padding: 2px 30px 2px 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(25, 25, 25, 0.2);
+}
+.progress > .progress-completed {
+    position: absolute;
+    right: 0px;
+    font-weight: 800;
+    padding: 3px 10px 2px;
+}
+.grid-mobile{
+    padding: 25px 30px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+.grid-mobile img{
+    width: 100%;
+}
+#grid-title{
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    color: #676a6d;
+}
+.btn-cstm{
+    padding: 15px;
+    border-radius: 30px;
+}
+
+#custom-search-input input{
+    border: 1px solid #eaeaea;
+    border-right: none;
+    box-shadow: none;
+    background: #fff;
+    padding: 10px;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 15px 0 10px;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 18px;
+}
+.result-mobile{
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea;
+}
+.result-mobile:hover{
+    background: #f7f7f7;
+}
+.result-mobile img{
+    width: 100%;
+}
+.result-mobile #name{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.result-mobile #no{
+    margin-bottom: 0;
+}
+.result-mobile #address{
+    margin-bottom: 0;
+}
+.result-mobile h3{
+    color: #4183D7;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.result-mobile #date{
+    font-size: 15px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+.result-mobile #done{
+    color: #1BBC9B;
+    font-style: italic;
+}
+
+.profit-mobile{
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    margin-top: -10px;
+}
+.profit-mobile h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    
+}
+.target-mobile{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.target-mobile #result{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #03C9A9;
+    font-size: 18px;
+}
+.target-mobile #target{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #EF4836;
+    font-size: 18px;
+}
+/*SALES ORDER*/

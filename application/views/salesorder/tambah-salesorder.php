@@ -6,17 +6,32 @@
         <div class="col-xs-6 col-sm-6 nopadding" style="padding-left: 5px;">
         	<button class="btn btn-success  btn-cstm" data-toggle="modal" data-target="#modalTambah" style="width: 100%"><span class="fa fa-user-plus"></span> Tambah Pelanggan</button>
         </div>
-        <div class="col-xs-12 result-mobile">
-        	<div class="col-xs-3">
-        		<img src="<?php echo base_url() ?>assets/img/flaticon/user.png">
-        	</div>
-        	<div class="col-xs-9" style="padding-left: 0">
+        <div class="col-xs-12 result-mobile" style="padding: 10px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px;">
+         	<div class="col-xs-12" style="padding-left: 0">
         		<p id="name">Firman</p>
         	</div>
-        	
-        	<div class="col-xs-9" style="padding-left: 0">
+        	<div class="col-xs-12" style="padding-left: 0">
+        		<p id="address">082237962182</p>
+        	</div>
+        	<div class="col-xs-12" style="padding-left: 0">
+        		<p id="address">firman20dot@gmail.com</p>
+        	</div>
+        	<div class="col-xs-12" style="padding-left: 0">
+        		<p id="address">Laki - Laki</p>
+        	</div>
+        	<div class="col-xs-12" style="padding-left: 0">
+        		<p id="address">Umum</p>
+        	</div>
+        	<div class="col-xs-12" style="padding-left: 0">
         		<p id="address">Jl. Sunggal, Medan Sunggal, Kota Medan, Sumatera Utara 20127</p>
         	</div>
+        	<div class="col-xs-12 act-m">
+        		<a href="" style="margin-right: 30px;">Ubah</a>
+        		<a href="">Hapus</a>
+        	</div>
+        </div>
+        <div class="col-xs-12 nopadding">
+        	<a href="<?php echo base_url() ?>salesorder/so" class="btn btn-primary btn-next" style="width: 100%; background: #6BB9F0;">Selanjutnya <span class="lnr lnr-chevron-right" style="font-size: 15px;"></span></a>
         </div>
 	</div>
 </div>

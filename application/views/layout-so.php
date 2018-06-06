@@ -28,6 +28,9 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/pace-min.js"></script>
 	<!-- ICONS -->
 	<meta name="theme-color" content="#3498db">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	<meta name="mobile-web-app-capable" content="yes">
 	<link rel="icon" sizes="192x192" href="<?php echo base_url() ?>assets/img/favicon.png">
 	<style type="text/css">
 		body{

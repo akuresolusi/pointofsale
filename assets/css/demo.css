@@ -202,7 +202,7 @@ table{
 .grid-mobile{
     padding: 25px 30px;
     border-radius: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
 }
 .grid-mobile img{
     width: 100%;
@@ -215,10 +215,14 @@ table{
     color: #676a6d;
 }
 .btn-cstm{
-    padding: 15px;
+    padding: 10px;
     border-radius: 30px;
+    font-size: 15px;
 }
-
+.btn-next{
+    padding: 10px;
+    font-size: 18px;
+}
 #custom-search-input input{
     border: 1px solid #eaeaea;
     border-right: none;
@@ -286,9 +290,19 @@ table{
     color: #1BBC9B;
     font-style: italic;
 }
-
+.result-mobile .act-m{
+    color: #000;
+    padding: 0 10px 0 0;
+    float: right;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
+}
+.result-mobile .act-m a{
+    color: #36D7B7;
+}
 .profit-mobile{
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
     padding: 20px 0;
     margin-top: -10px;
 }
@@ -298,11 +312,10 @@ table{
     text-align: center;
     font-size: 70px;
     font-weight: bold;
-    
 }
 .target-mobile{
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 .target-mobile #result{
     text-align: center;
@@ -319,5 +332,23 @@ table{
     font-weight: 600;
     color: #EF4836;
     font-size: 18px;
+}
+.customer-mobile{
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+.price-mobile{
+    border: 1px solid #eee;
+}
+.price-mobile #total{
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 10px;
+}
+.price-mobile #money{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+     padding-top: 10px;
 }
 /*SALES ORDER*/

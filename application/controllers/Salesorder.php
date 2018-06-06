@@ -29,4 +29,9 @@ class Salesorder extends CI_Controller {
 		$data['title'] = 'Pendapatan Sales Order';
 		$this->load->view('layout-so',$data);
 	}
+	public function so(){
+		$data['content'] = "salesorder/page-salesorder";
+		$data['title'] = 'Sales Order';
+		$this->load->view('layout-so',$data);
+	}
 }

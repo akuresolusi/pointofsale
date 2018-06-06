@@ -8,6 +8,7 @@ class Pembelian extends CI_Controller {
 		$this->load->model('master_model');
 		$this->load->model('pembelian_model');
 		$this->load->model('barang_model');
+		$this->load->model('pelunasan_model');
 	}
 
 	public function index(){
@@ -41,7 +42,12 @@ class Pembelian extends CI_Controller {
 		$data['list_syarat_bayar'] = $this->master_model->list_syaratbayar();
 		$data['isi'] 	=  "pembelian/edit-pembelian";
 		$data['title'] 	= 'Perbarui Data Pembelian';
-		$this->load->view('layout',$data);	
+
+		$pelunasan = $this->pelunasan_model->list_pelunasan_faktur($this->input->get('faktur'));
+		
+
+
+		// $this->load->view('layout',$data);	
 	}
 
 	public function add_items(){

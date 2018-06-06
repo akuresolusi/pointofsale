@@ -57,7 +57,7 @@
 												<div class='dropdown'>
 											        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
 											        <ul class='dropdown-menu pull-right'>
-											            <li><a href='barang/lihatdata'><span class='fa fa-eye'></span> Lihat Data</a></li>
+											            <li><a href='barang/lihatdata?id=".$value['id']."'><span class='fa fa-eye'></span> Lihat Data</a></li>
 											            <li><a href='barang/foto_barang?id=".$value['id']."'><span class='fa fa-image'></span> Upload Foto</a></li>
 											            ".$status."
 											            <li><a href='barang/edit?id=".$value['id']."'><span class='fa fa-edit'></span> Edit Data</a></li>

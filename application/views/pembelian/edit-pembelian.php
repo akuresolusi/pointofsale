@@ -182,23 +182,26 @@ option{
 						  			<label>Catatan</label>
 						  			<textarea class="form-control" name="catatan" style="height: 125px;" placeholder="Catatan"><?php echo $detail['catatan']; ?></textarea>
 						  		</div>
-						  		<div class="col-sm-5" style="float: right;">
+						  		<div class="col-md-5" style="float: right;">
 						  			<div class="row d">
 						  				<span id="d-title">SUB TOTAL</span>	
 						  				<span id="sub-number">
-						  					<input type="hidden" id="subtotal" value="">
+						  					<input type="hidden" id="total" value="">
 						  					<span id="view_subtotal"></span>
 						  				</span>	
 						  			</div>
 						  			<div class="row d">
-						  				<span id="d-title">PAJAK</span>
-						  				<span id="sub-number"><input type="text" id="hargapajak" name=""  class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
-						  				<span id="sub-number"><input type="number" min="0" max="100" class="form-control" style="width: 80px;" id="persenpajak" name="pajak" value="<?php echo $detail['pajak']; ?>" placeholder="%"></span>
+						  				<span id="d-title">BIAYA LAINNYA</span>	
+						  				<span id="sub-number"><input type="number" value="<?php echo $detail['lainya'] ?>" id="lainnya" name="lainya" class="form-control" style="width: 240px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>
 						  			</div>
 						  			<div class="row d">
 						  				<span id="d-title">DISKON</span>	
-						  				<span id="sub-number"><input type="text" id="hargadiskon" class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>		
-						  				<span id="sub-number"><input type="number" id="persendiskon" name="diskon"  class="form-control" style="width: 80px;" value="<?php echo $detail['diskon']; ?>" placeholder="%"></span>
+						  				<span id="sub-number"><input type="number" value="<?php echo $detail['diskon'] ?>" id="diskon" name="diskon" class="form-control" style="width: 240px; margin-left:  10px; text-align: right;" placeholder="Rp."></span>
+						  			</div>
+						  			<div class="row d">
+						  				<span id="d-title">PAJAK</span>
+						  				<span id="sub-number"><input type="text" id="hargapajak"   class="form-control" style="width: 150px; margin-left:  10px; text-align: right;" placeholder="Rp." disabled></span>		
+						  				<span id="sub-number"><input type="number" min="0" max="100" class="form-control" style="width: 80px;" id="pajak" name="pajak" placeholder="%"></span>
 						  			</div>
 						  			<div class="row d">
 						  				<span id="gt-title">GRAND TOTAL</span>			
@@ -441,7 +444,7 @@ option{
 			url: '<?php echo base_url(); ?>pembelian/list_items_edit',
 	        success: function(html){
 	        	$("#items").html(html);
-	        	reload_data();
+	        	hitung_form();
 	        }
         }); 
 	}
@@ -455,62 +458,62 @@ option{
 			data: "faktur=" + faktur,
 			url: '<?php echo base_url(); ?>pembelian/subtotal',
 	        success: function(result){
-	        	$("#subtotal").val(result);
+	        	$("#total").val(result);
 	        	$("#view_subtotal").html("Rp. " + result);
-	        	grand_total();
+	        	hitung_form();
 	        }
         });
 	}
 	get_subtotal();	
 
 
-	function get_harga_pajak(){
-		var subtotal 	= $("#subtotal").val();
-		var nilai 		= $("#persenpajak").val();
-		var hasil 	 	= subtotal / 100 * nilai;
-		$("#hargapajak").val(hasil.toFixed(0));
+
+	function hitung_form(){
+		var total = $("#total").val();
+		var lainnya = $("#lainnya").val();
+		var diskon = $("#diskon").val();
+		var pajak =  $("#pajak").val();
+		if(lainnya){
+			total = parseInt(total) + parseInt(lainnya); 
+		}
+		if(diskon){
+			total = total - diskon; 
+		}
+		if(pajak){
+			var hp = (total / 100) * pajak;
+			$("#hargapajak").val(hp.toFixed(0));	
+		}else{
+			$("#hargapajak").val('');
+		}
+		if(hp){
+			$("#grandtotal").html(parseInt(total) + parseInt(hp));
+		}else{
+			$("#grandtotal").html(total);
+		}
 	}
 
-	function get_harga_diskon(){
-		var subtotal 	= $("#subtotal").val();
-		var nilai 		= $("#persendiskon").val();
-		var hasil 	 	= subtotal / 100 * nilai;
-		$("#hargadiskon").val(hasil.toFixed(0));
-	}
-
-	function get_persen_diskon(){
-		var subtotal 	= $("#subtotal").val();
-		var nilai 		= $("#hargadiskon").val();
-		var hasil 	 	= 100 / subtotal * nilai;
-		$("#persendiskon").val(hasil.toFixed(1));
-	}
-
-	$("#persenpajak").change(function() {
-		reload_data();
+	$(document).on('change', '#pajak', function(e){
+		hitung_form()
+	});
+	$(document).on('change', '#lainnya', function(e){
+		hitung_form()
+	});
+	$(document).on('change', '#diskon', function(e){
+		hitung_form()
 	});
 
-	$("#persendiskon").change(function() {
-		reload_data();
+	$(document).on('keyup', '#pajak', function(e){
+		hitung_form()
+	});
+	$(document).on('keyup', '#lainnya', function(e){
+		hitung_form()
+	});
+	$(document).on('keyup', '#diskon', function(e){
+		hitung_form()
 	});
 
-	$("#hargadiskon").change(function() {
-		get_persen_diskon();
-		grand_total();
-	});
 
-	function grand_total(){
-		var subtotal 		= $("#subtotal").val();
-		var harga_diskon 	= subtotal / 100 * $("#persendiskon").val();
-		var harga_pajak		= subtotal / 100 * $("#persenpajak").val();
-		var hasil 			= parseInt(subtotal) - parseInt(harga_diskon) + parseInt(harga_pajak); 
-		$("#grandtotal").html("Rp. " + hasil);
-	}
-
-	function reload_data(){
-		get_subtotal();
-		get_harga_pajak();
-		get_harga_diskon();
-	}
+	
 
 	$("#qty").change(function() {
 		var qty 	= $("#qty").val();

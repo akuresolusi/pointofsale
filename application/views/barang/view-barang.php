@@ -58,7 +58,7 @@
 				<h3 class="page-title"><?php echo $title; ?></h3>
 			</div>
 			<div class="col-md-6">
-			    <h3 id="desc">KODE. <span class="indigo">RS51K54F02C</span></h3>
+			    <h3 id="desc">KODE. <span class="indigo"><?php echo $barang['kode'] ?></span></h3>
 			</div>
 		</div>
 	</div>
@@ -76,60 +76,59 @@
                     		<tr>
                     			<td>Nama Barang</td>
                     			<td>:</td>
-                    			<td>Kulkas Side Bye Side RS51K54F02C</td>
+                    			<td><?php echo $barang['nama'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Kategori Barang</td>
                     			<td>:</td>
-                    			<td>Kemeja</td>
+                    			<td><?php echo $kategori['kategori'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Satuan</td>
                     			<td>:</td>
-                    			<td>Pac</td>
+                    			<td><?php echo $satuan['satuan'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Warna</td>
                     			<td>:</td>
-                    			<td>Merah</td>
+                    			<td><?php echo $warna['warna'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Ukuran</td>
                     			<td>:</td>
-                    			<td>S</td>
+                    			<td><?php echo $barang['ukuran'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Harga 1</td>
                     			<td>:</td>
-                    			<td>0</td>
+                    			<td><?php echo $barang['harga1'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Harga 2</td>
                     			<td>:</td>
-                    			<td>0</td>
+                    			<td><?php echo $barang['harga2'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Harga 3</td>
                     			<td>:</td>
-                    			<td>0</td>
+                    			<td><?php echo $barang['harga3'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Harga 4</td>
                     			<td>:</td>
-                    			<td>0</td>
+                    			<td><?php echo $barang['harga4'] ?></td>
                     		</tr>
                     		<tr>
                     			<td>Harga 5</td>
                     			<td>:</td>
-                    			<td>0</td>
+                    			<td><?php echo $barang['harga5'] ?></td>
                     		</tr>
                     	</tbody>
                     </table>
                     <a href="<?php echo base_url(); ?>barang" class="btn btn-warning" style="margin-bottom: 10px;""><span class="fa fa-list"></span> Daftar Barang</a>
                 </div>
                 <div class="col-md-4">
-                    <img src="<?php echo base_url(); ?>assets/img/noimage.jpg" alt="" width="320">
-                    
+                    <img src="<?php echo base_url(); ?>assets/foto/<?php echo $listfoto[0]['file']; ?>" alt="" width="320">
                 </div>
 			</div>
 		</div>

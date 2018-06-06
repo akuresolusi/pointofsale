@@ -16,6 +16,11 @@ class Barang extends CI_Controller {
 		$this->load->view('layout',$data);
 	}
 	public function lihatdata(){
+		$data['barang'] = $this->barang_model->detail_barang($this->input->get('id'));
+		$data['kategori'] = $this->master_model->detail_kategori($data['barang']['idkategori']);
+		$data['satuan'] = $this->master_model->detail_satuan($data['barang']['idsatuan']);
+		$data['warna'] = $this->master_model->detail_warna($data['barang']['idwarna']);
+		$data['listfoto'] = $this->barang_model->list_foto($data['barang']['id']);
 		$data['isi'] = "barang/view-barang";
 		$data['title'] = 'Lihat Data Barang';
 		$this->load->view('layout',$data);

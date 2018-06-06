@@ -88,6 +88,9 @@ class Pembelian_model extends CI_Model {
 
 		$diskon = $this->input->post('diskon');
 		if($diskon < 0){ $diskon = 0; }
+
+		$lainya = $this->input->post('lainya');
+		if($lainya < 0){ $lainya = 0; }
 		
 		$data = array( 	"idsupplier"=>$this->input->post('idsupplier'),
 						"referensi"=>$this->input->post('referensi'),
@@ -96,6 +99,7 @@ class Pembelian_model extends CI_Model {
 						"tempo"=>$tempo,
 						"pajak"=>$pajak,
 						"diskon"=>$diskon,
+						"lainya"=>$lainya,
 						"catatan"=>$this->input->post('catatan')
 				);
 		$this->db->where('faktur', $this->input->post('faktur'));

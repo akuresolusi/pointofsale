@@ -25,7 +25,11 @@ class Barang extends CI_Controller {
 		$data['title'] = 'Lihat Data Barang';
 		$this->load->view('layout',$data);
 	}
-
+	public function import(){
+		$data['isi'] =  "barang/import-barang";
+		$data['title'] = 'Import Barang';
+		$this->load->view('layout',$data);
+	}
 	public function tambah(){
 		$data['list_kategori'] = $this->master_model->list_kategori();
 		$data['list_satuan'] = $this->master_model->list_satuan();

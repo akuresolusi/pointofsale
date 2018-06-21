@@ -16,10 +16,12 @@ a {
 
 table{
     font-size: 13.5px;
+    border-top: 2px solid #a9dbff; 
 }
 
 th{
   font-weight: 600;
+  background: #e7f5ff;
   text-align: center;}
 
 .table>tbody>tr>td {

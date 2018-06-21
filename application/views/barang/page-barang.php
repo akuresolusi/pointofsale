@@ -9,7 +9,7 @@
 		    		</div>
 		    		<div class="col-md-6 add-data">
 		    			<a href="<?php echo base_url(); ?>barang/tambah"><button class="btn btn-primary btn-action btn-add"><span class="fa fa-plus"></span> Tambah Data</button></a>
-		    			<a href="#"><button class="btn btn-default btn-action btn-add" style="margin-right: 10px;"><span class="fa fa-upload"></span> Import Data</button></a>
+		    			<a href="<?php echo base_url(); ?>barang/import"><button class="btn btn-default btn-action btn-add" style="margin-right: 10px;"><span class="fa fa-upload"></span> Import Data</button></a>
 		    		</div>
 		    	</div>
 		 	</div>

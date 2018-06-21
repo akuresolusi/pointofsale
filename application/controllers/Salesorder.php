@@ -10,23 +10,23 @@ class Salesorder extends CI_Controller {
 
 	public function index(){
 		$data['content'] = "salesorder/home-salesorder";
-		$data['title'] = 'Sales Order';
+		$data['title'] = 'HOME';
 		$this->load->view('layout-so',$data);
 	}
 
 	public function tambahso(){
 		$data['content'] = "salesorder/tambah-salesorder";
-		$data['title'] = 'Tambah Sales Order';
+		$data['title'] = 'TAMBAH SALES ORDER';
 		$this->load->view('layout-so',$data);
 	}
 	public function history(){
 		$data['content'] = "salesorder/history-salesorder";
-		$data['title'] = 'History Sales Order';
+		$data['title'] = 'HISTORY';
 		$this->load->view('layout-so',$data);
 	}
 	public function pendapatan(){
 		$data['content'] = "salesorder/profit-salesorder";
-		$data['title'] = 'Pendapatan Sales Order';
+		$data['title'] = 'PENDAPATAN';
 		$this->load->view('layout-so',$data);
 	}
 	public function so(){

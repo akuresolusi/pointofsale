@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title><?php echo $title; ?> &mdash; Sales Order</title>
+	<title>Sales Order</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -18,6 +18,8 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/demo.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- DataTables -->
@@ -55,6 +57,7 @@
 						window.history.back();
 						}
 					</script>
+					<span style="text-transform: uppercase; font-weight: 600;"><?php echo $title; ?></span>
 				</div>
 			</div>
 		</nav>
@@ -78,11 +81,6 @@
 		</div>
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">&copy; 2018 <a href="http://akure-solusi.com" target="_blank" id="Quick Count">Akure Solusi</a>. All Rights Reserved.</p>
-			</div>
-		</footer>
 	</div>
 	<!-- END WRAPPER -->
 	

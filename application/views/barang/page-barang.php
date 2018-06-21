@@ -19,14 +19,17 @@
 					<div class="table-responsive" style="min-height: 300px;">
 							<table id="data" class="table table-striped table-hover">
 								<thead>
-									<th align="left">No</th>
-									<th>Kode Barang</th>
+									<th width="10">No</th>
+									<th>Kategori</th>
 									<th>Nama Barang</th>
-									<th>Kategori Barang</th>
 									<th>Satuan</th>
+									<th>Modal</th>
+									<th>Harga 1</th>
+									<th>Harga 2</th>
+									<th>Harga 3</th>
+									<th>Diskon</th>
 									<th>Stok</th>
 									<th>Status</th>
-									<th>Jlh Foto</th>
 									<th width="10"></th>
 								</thead>
 								<tbody>
@@ -46,13 +49,16 @@
 										echo"
 										<tr>
 											<td>".$i."</td>
-											<td>".$value['kode']."</td>
-											<td>".$value['nama']."</td>
 											<td>".$kategori['kategori']."</td>
+											<td>".$value['nama']."</td>
 											<td>Unit</td>
+											<td>".$value['modal']."</td>
+											<td>".$value['harga1']."</td>
+											<td>".$value['harga2']."</td>
+											<td>".$value['harga3']."</td>
+											<td>".$value['diskon']."</td>
 											<td align='center'>".$stok."</td>
 											<td align='center'>".$value['status']."</td>
-											<td align='center'>".$jlhfoto."</td>
 											<td style='text-align: left;'>
 												<div class='dropdown'>
 											        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>

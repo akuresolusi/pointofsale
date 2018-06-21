@@ -51,7 +51,7 @@ footer {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: 240px;
+  width: 225px;
   height: 100%;
   float: left;
   background-color: #fff;
@@ -65,7 +65,7 @@ footer {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  width: calc(100% - 240px);
+  width: calc(100% - 225px);
   left: 0;
   position: relative;
   float: right;
@@ -160,7 +160,7 @@ html.fullscreen-bg #wrapper {
     background-color: #fff; }
   .navbar-default .brand {
     float: left;
-    padding: 13px 45px;
+    padding: 13px 40px;
     background-color: #fff; }
   .navbar-default .brand img{
     width: 150px;

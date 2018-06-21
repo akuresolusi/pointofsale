@@ -92,7 +92,7 @@ class Pelunasan_model extends CI_Model {
 
 	public function list_pelunasan_faktur($faktur){
 		$this->db->where('faktur', $faktur);
-		return $this->db->>get('pelunasan_beli')->result_array();
+		return $this->db->get('pelunasan_beli')->result_array();
 	}
 
 }

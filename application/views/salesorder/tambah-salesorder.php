@@ -1,12 +1,12 @@
 <div class="main-content">
 	<div class="container-fluid">
 		<div class="col-xs-6 col-sm-6 nopadding" style="padding-right: 5px">
-        	<button class="btn btn-primary btn-cstm" data-toggle="modal" data-target="#modalCari" style="width: 100%; background: #6BB9F0;"><span class="fa fa-search"></span> Cari Pelanggan</button>
+        	<button class="btn btn-warning btn-cstm" data-toggle="modal" data-target="#modalCari" style="width: 100%;"><span class="fa fa-search"></span> Cari Pelanggan</button>
         </div>
         <div class="col-xs-6 col-sm-6 nopadding" style="padding-left: 5px;">
         	<button class="btn btn-success  btn-cstm" data-toggle="modal" data-target="#modalTambah" style="width: 100%"><span class="fa fa-user-plus"></span> Tambah Pelanggan</button>
         </div>
-        <div class="col-xs-12 result-mobile" style="padding: 10px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px;">
+        <div class="col-xs-12 result-mobile" style="margin: 20px 0;">
          	<div class="col-xs-12" style="padding-left: 0">
         		<p id="name">Firman</p>
         	</div>

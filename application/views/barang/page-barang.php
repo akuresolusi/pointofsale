@@ -9,6 +9,7 @@
 		    		</div>
 		    		<div class="col-md-6 add-data">
 		    			<a href="<?php echo base_url(); ?>barang/tambah"><button class="btn btn-primary btn-action btn-add"><span class="fa fa-plus"></span> Tambah Data</button></a>
+		    			<a href="#"><button class="btn btn-default btn-action btn-add" style="margin-right: 10px;"><span class="fa fa-upload"></span> Import Data</button></a>
 		    		</div>
 		    	</div>
 		 	</div>
@@ -16,68 +17,60 @@
 				<div class="panel-heading">
 				</div>
 				  <div class="panel-body">
-					<div class="table-responsive" style="min-height: 300px;">
-							<table id="data" class="table table-striped table-hover">
-								<thead>
-									<th width="10">No</th>
-									<th>Kategori</th>
-									<th>Nama Barang</th>
-									<th>Satuan</th>
-									<th>Modal</th>
-									<th>Harga 1</th>
-									<th>Harga 2</th>
-									<th>Harga 3</th>
-									<th>Diskon</th>
-									<th>Stok</th>
-									<th>Status</th>
-									<th width="10"></th>
-								</thead>
-								<tbody>
-								<?php
-									$i=0;
-									foreach ($list as $value) {
-										$i++;
-										$kategori = $this->master_model->detail_kategori($value['idkategori']);
-										if($value['status'] == "Aktif"){
-											$status = "<li><a href='barang/off_barang?id=".$value['id']."'><span class='fa fa-check'></span> Tidak Aktifkan</a></li>";
-										}else{
-											$status = "<li><a href='barang/on_barang?id=".$value['id']."'><span class='fa fa-check'></span> Aktifkan</a></li>";
-										}
-										$jlhfoto = $this->barang_model->jlh_foto($value['id']);
-										$stok = $value['stok'];
-										if($stok < 1){ $stok = "-"; }
-										echo"
-										<tr>
-											<td>".$i."</td>
-											<td>".$kategori['kategori']."</td>
-											<td>".$value['nama']."</td>
-											<td>Unit</td>
-											<td>".$value['modal']."</td>
-											<td>".$value['harga1']."</td>
-											<td>".$value['harga2']."</td>
-											<td>".$value['harga3']."</td>
-											<td>".$value['diskon']."</td>
-											<td align='center'>".$stok."</td>
-											<td align='center'>".$value['status']."</td>
-											<td style='text-align: left;'>
-												<div class='dropdown'>
-											        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
-											        <ul class='dropdown-menu pull-right'>
-											            <li><a href='barang/lihatdata?id=".$value['id']."'><span class='fa fa-eye'></span> Lihat Data</a></li>
-											            <li><a href='barang/foto_barang?id=".$value['id']."'><span class='fa fa-image'></span> Upload Foto</a></li>
-											            ".$status."
-											            <li><a href='barang/edit?id=".$value['id']."'><span class='fa fa-edit'></span> Edit Data</a></li>
-											            <li><a href='barang/hapus_barang?id=".$value['id']."'><span class='fa fa-trash'></span> Hapus Data</a></li>
-											        </ul>
-										    	</div>
-											</td>
-										</tr>";
-									}
-								?>
-								</tbody>
-							</table>	
-						</div>
-					</div>
+					<table id="data" class="table table-striped table-hover">
+						<thead>
+							<th width="10">No</th>
+							<th>Kategori</th>
+							<th>Nama Barang</th>
+							<th>Satuan</th>
+							<th>Harga Beli</th>
+							<th>Harga Jual</th>
+							<th>Stok</th>
+							<th>Status</th>
+							<th width="10"></th>
+						</thead>
+						<tbody>
+						<?php
+							$i=0;
+							foreach ($list as $value) {
+								$i++;
+								$kategori = $this->master_model->detail_kategori($value['idkategori']);
+								if($value['status'] == "Aktif"){
+									$status = "<li><a href='barang/off_barang?id=".$value['id']."'><span class='fa fa-check'></span> Tidak Aktif</a></li>";
+								}else{
+									$status = "<li><a href='barang/on_barang?id=".$value['id']."'><span class='fa fa-check'></span> Aktif</a></li>";
+								}
+								$jlhfoto = $this->barang_model->jlh_foto($value['id']);
+								$stok = $value['stok'];
+								if($stok < 1){ $stok = "-"; }
+								echo"
+								<tr>
+									<td>".$i."</td>
+									<td>".$kategori['kategori']."</td>
+									<td>".$value['nama']."</td>
+									<td>Unit</td>
+									<td>".$value['modal']."</td>
+									<td>".$value['harga1']."</td>
+									<td align='center'>".$stok."</td>
+									<td align='center'><span class='label label-success'>".$value['status']."</span></td>
+									<td style='text-align: left;'>
+										<div class='dropdown'>
+									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Tindakan'><span class='fa fa-gear'></span></a>
+									        <ul class='dropdown-menu pull-right'>
+									            <li><a href='barang/lihatdata?id=".$value['id']."'><span class='fa fa-eye'></span> Lihat Data</a></li>
+									            <li><a href='barang/foto_barang?id=".$value['id']."'><span class='fa fa-image'></span> Upload Foto</a></li>
+									            ".$status."
+									            <li><a href='barang/edit?id=".$value['id']."'><span class='fa fa-edit'></span> Edit Data</a></li>
+									            <li><a href='barang/hapus_barang?id=".$value['id']."'><span class='fa fa-trash'></span> Hapus Data</a></li>
+									        </ul>
+								    	</div>
+									</td>
+								</tr>";
+							}
+						?>
+						</tbody>
+					</table>	
+				</div>
 				</div>
 			</div>
 		</div>

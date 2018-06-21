@@ -14,10 +14,20 @@ a {
     color: #3b98c8;
     text-decoration: none; }
 
+table{
+    font-size: 13.5px;
+}
+
 th{
   font-weight: 600;
-  background: #e7f5ff;
   text-align: center;}
+
+.table>tbody>tr>td {
+    padding: 5px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
 
 .page-title {
   margin-top: 0;

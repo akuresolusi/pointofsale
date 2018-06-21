@@ -20,7 +20,7 @@
 				  	</div>
 				  	<div class="form-group col-md-3">
 				  		<label>&nbsp;</label>
-				  		<button type="submit" value="UPLOAD" class="form-control btn btn-primary" ><span class="fa fa-upload"> Upload</span></button>
+				  		<button type="submit" value="UPLOAD" class="form-control btn btn-primary" ><span class="fa fa-upload"> </span> Upload</button>
 				  	</div>
 				  	<?php echo form_close(); ?>
 				    <div  class="form-group col-md-3">

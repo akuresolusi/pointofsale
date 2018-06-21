@@ -1,52 +1,40 @@
 <!-- MAIN CONTENT -->
 <style type="text/css">
-	/* The grid: Four equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-}
-
-/* Style the images inside the grid */
-.column img {
-    opacity: 0.8; 
-    cursor: pointer; 
-}
-
-.column img:hover {
-    opacity: 1;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* The expanding image container */
-.container {
-    position: relative;
-    display: none;
-}
-
-/* Expanding image text */
-#imgtext {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: white;
+.title-ds{
+    margin:20px 0 15px 0;
     font-size: 20px;
+    font-weight: normal;
+    text-transform: uppercase;
 }
-
-/* Closable button inside the expanded image */
-.closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
+.title-fav{
+    margin:0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.nav-tabs { border-bottom: 1px solid #DDD;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; padding: 10px 20px;}
+    .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #2196f3 !important; background: transparent; }
+    .nav-tabs > li > a::after { content: ""; background: #2196f3; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 350ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 20px 0; }
+.tab-content{padding:10px 0 0 0}
+.title{
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.content{
+    font-size: 15px;
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.foto img{
+    margin: 0 auto;
+    display: block;
 }
 </style>
 <div class="main-content">
@@ -57,79 +45,103 @@
 				<span id="sub-title">Produk</span>
 				<h3 class="page-title"><?php echo $title; ?></h3>
 			</div>
-			<div class="col-md-6">
-			    <h3 id="desc">KODE. <span class="indigo"><?php echo $barang['kode'] ?></span></h3>
-			</div>
 		</div>
 	</div>
 	<div class="panel panel-headline">
-		<div class="panel-heading">
-		</div>
 		  <div class="panel-body">
-				
-                <div class="col-md-8">
-                    <table class="table table-hover table-striped">
-                    	<thead>
-                    		<th colspan="3">Detail Barang</th>
-                    	</thead>
-                    	<tbody>
-                    		<tr>
-                    			<td>Nama Barang</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['nama'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Kategori Barang</td>
-                    			<td>:</td>
-                    			<td><?php echo $kategori['kategori'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Satuan</td>
-                    			<td>:</td>
-                    			<td><?php echo $satuan['satuan'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Warna</td>
-                    			<td>:</td>
-                    			<td><?php echo $warna['warna'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Ukuran</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['ukuran'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Harga 1</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['harga1'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Harga 2</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['harga2'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Harga 3</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['harga3'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Harga 4</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['harga4'] ?></td>
-                    		</tr>
-                    		<tr>
-                    			<td>Harga 5</td>
-                    			<td>:</td>
-                    			<td><?php echo $barang['harga5'] ?></td>
-                    		</tr>
-                    	</tbody>
-                    </table>
-                    <a href="<?php echo base_url(); ?>barang" class="btn btn-warning" style="margin-bottom: 10px;""><span class="fa fa-list"></span> Daftar Barang</a>
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#profil" aria-controls="profil" role="tab" data-toggle="tab"><span class="fa fa-book"></span> Profil</a></li>
+              <li role="presentation"><a href="#foto" aria-controls="foto" role="tab" data-toggle="tab"><span class="fa fa-image"> </span> Foto</a></li>
+            </ul>
+            <div class="tab-content" style="margin-bottom: 0;">
+                <div role="tabpanel" class="tab-pane active" id="profil">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                              <h4>Profil</h4>
+                            </li>
+                            <li class="list-group-item">
+                                  <p class="text-muted title">Kode Barang</p>
+                                  <h4 class="content"><?php echo $barang['kode'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Nama Barang</p>
+                                  <h4 class="content"><?php echo $barang['nama'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Kategori Barang</p>
+                                  <h4 class="content"><?php echo $kategori['kategori'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Satuan</p>
+                                  <h4 class="content"><?php echo $satuan['satuan'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Warna</p>
+                                  <h4 class="content"><?php echo $warna['warna'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Ukuran</p>
+                                  <h4 class="content"><?php echo $barang['ukuran'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Stok</p>
+                                  <h4 class="content"><?php echo $barang['stok'] ?></h4>
+                              </li>
+                              <li class="list-group-item">
+                                  <p class="text-muted title">Status</p>
+                                  <h4 class="content"><span class='label label-success'><?php echo $barang['status'] ?></span></h4>
+                              </li> 
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                              <h4>Harga</h4>
+                            </li>
+                            <li class="list-group-item">
+                              <p class="text-muted title">Harga Modal</p>
+                              <h4 class="content"><?php echo $barang['modal'] ?></h4>
+                          </li>
+                          <li class="list-group-item">
+                              <p class="text-muted title">Harga 1</p>
+                              <h4 class="content"><?php echo $barang['harga1'] ?></h4>
+                          </li>
+                          <li class="list-group-item">
+                              <p class="text-muted title">Harga 2</p>
+                              <h4 class="content"><?php echo $barang['harga2'] ?></h4>
+                          </li>
+                          <li class="list-group-item">
+                              <p class="text-muted title">Harga 3</p>
+                              <h4 class="content"><?php echo $barang['harga3'] ?></h4>
+                          </li>
+                          <li class="list-group-item">
+                              <p class="text-muted title">Harga 4</p>
+                              <h4 class="content"><?php echo $barang['harga4'] ?></h4>
+                          </li><li class="list-group-item">
+                              <p class="text-muted title">Harga 5</p>
+                              <h4 class="content"><?php echo $barang['harga5'] ?></h4>
+                          </li>
+                          <li class="list-group-item">
+                              <p class="text-muted title">Diskon</p>
+                              <h4 class="content"><?php echo $barang['diskon'] ?></h4>
+                          </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <img src="<?php echo base_url(); ?>assets/foto/<?php echo $listfoto[0]['file']; ?>" alt="" width="320">
                 </div>
+                <div role="tabpanel" class="tab-pane" id="foto">
+                    <div class="col-md-6" style="border:1px solid #ddd; margin-bottom: 20px; border-radius: 5px;">
+                        <div class="foto">
+                            <img src="<?php echo base_url(); ?>assets/foto/<?php echo $listfoto[0]['file']; ?>" alt="" width="320">
+                        </div>
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-12 nopadding">
+               <a href="<?php echo base_url(); ?>barang" class="btn btn-warning" style="margin-bottom: 10px;""><span class="fa fa-list"></span> Daftar Barang</a>
+           </div> 
 			</div>
 		</div>
 	</div>

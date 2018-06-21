@@ -47,7 +47,7 @@
 										<td>".date_format(date_create($value['tempo']),'d M Y')."</td>
 										<td style='text-align: center;'>
 										<div class='dropdown'>
-									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
+									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'><span class='fa fa-gear'></span></a>
 									        <ul class='dropdown-menu pull-right'>
 									            <li><a href='".base_url()."penjualan/details'><span class='fa fa-eye'></span> Lihat Data</a></li>
 									            <li><a href='".base_url()."penjualan/edit'><span class='fa fa-edit'></span> Edit Data</a></li>

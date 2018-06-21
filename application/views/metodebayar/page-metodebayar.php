@@ -56,7 +56,7 @@
 										<td>".$bank."</td>
 										<td style='text-align: center;''>
 										<div class='dropdown'>
-									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'>Tindakan <span class='caret'></span></a>
+									        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'><span class='fa fa-gear'></span></a>
 									        <ul class='dropdown-menu pull-right'>
 									            <li><a href='#'><span class='fa fa-eye'></span> Lihat Data</a></li>
 									            <li><a href='metodebayar/edit?id=".$value['id']."'><span class='fa fa-edit'></span> Edit Data</a></li>

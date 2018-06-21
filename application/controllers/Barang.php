@@ -158,7 +158,7 @@ class Barang extends CI_Controller {
 				$json["status"] = 0;
 				$json["datanya"] = "<ul id='daftar-autocomplete'>";
 				$json["datanya"] .= "<li data-toggle='modal' data-target='#modal-tambah-barang'>
-										<span> + Data tidak ditemukan, Klik Untuk Tambah Baru +</span>
+										<span> + Data tidak ditemukan, Klik untuk Tambah Baru +</span>
 									</li>";
 				$json["datanya"] .= "</ul>";
 			

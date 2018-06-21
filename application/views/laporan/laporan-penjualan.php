@@ -61,7 +61,6 @@
 							<td align="right">Rp. 22.829.291</td>
 						</tr>
 						<tr>
-							<td colspan="6"></td>
 							<td colspan="7"><b>Grand Total</b></td>
 							<td align="right"><b>Rp. 22.829.291</b></td>
 						</tr>

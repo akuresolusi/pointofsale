@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Laporan Pembelian</title>
+	<title>Faktur Penjualan</title>
 	<style>
 	.grid-container {
 	  display: grid;
@@ -40,7 +40,6 @@
 	.grid-item .details{
 		width: 100%;
 		padding: 20px 10px 0 10px;
-		border-left: 1px solid #000;
 		height: 140px;
 		font-size: 14px;
 	}
@@ -78,15 +77,37 @@
 	    box-sizing: border-box;
 	    font-size: 12px;
 	}
+	.say{
+		float: left;
+		width: 64%;
+		font-size: 13px;
+	}
+	.say .sign{
+		width: 25%;
+		display: inline-block;
+		border-bottom: 1px solid #000;
+		margin-right: 15px;
+		text-align: center;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 12px;
+	}
+	.say .sign #sign-title {
+		margin-bottom: 60px;
+	}
+	.detailsprice{
+		float: left;
+		width: 36%;
+		font-weight: bold;
+	}
 	</style>
 </head>
 <body>
 <div class="grid-container" style="border-bottom: 2px solid #000;">
 	<div class="grid-item">
 		<div class="title">
-			<h2>FAKTUR PEMBELIAN BARANG</h2>
+			<h2>FAKTUR PENJUALAN BARANG</h2>
 		</div>
-		
 	</div>
 	  <div class="grid-item" style="font-size: 14px;">
 	  	<div class="logo">
@@ -97,7 +118,7 @@
 	  	</div>
 	  </div>
 </div>
-<div class="grid-container" style="border-bottom: 1px solid #000; padding-bottom: 0;">
+<div class="grid-container" style="padding-bottom: 0;">
 	<div class="grid-item" style="padding-top:10px;">
 		<span>Kepada Yth :</span>
 		<div class="to">
@@ -125,12 +146,12 @@
 			<table>
 				<tbody>
 					<tr>
-						<td><b>No Faktur</b></td>
+						<td><b>Nomor Faktur</b></td>
 						<td>:</td>
 						<td>FB-8</td>
 					</tr>
 					<tr>
-						<td><b>No Referensi</b></td>
+						<td><b>Nomor Referensi</b></td>
 						<td>:</td>
 						<td>123</td>
 					</tr>
@@ -164,16 +185,14 @@
 	<table>
 		<thead>
 			<th width="20">No.</th>
-			<th width="100">Kode Barang</th>
 			<th width="350">Nama Barang</th>
 			<th width="40">Qty</th>
-			<th width="150">Harga Satuan</th>
+			<th width="150">Harga</th>
 			<th width="150">Sub Total</th>
 		</thead>
 		<tbody>
 			<tr>
 				<td>1</td>
-				<td>23123</td>
 				<td>AC Akira AC-S10CUG INP (O)</td>
 				<td>10</td>
 				<td>200000</td>
@@ -181,7 +200,6 @@
 			</tr>
 			<tr>
 				<td>2</td>
-				<td>23123</td>
 				<td>Rice Cooker SHARP KS-A18TTR</td>
 				<td>10</td>
 				<td>200000</td>
@@ -189,7 +207,6 @@
 			</tr>
 			<tr>
 				<td>3</td>
-				<td>23123</td>
 				<td>Yundai Kipas Angin RYEF16</td>
 				<td>10</td>
 				<td>200000</td>
@@ -197,7 +214,37 @@
 			</tr>
 		</tbody>
 	</table>
-	<p><b>Terbilang :</b></p>
+	<div class="say">
+		<p><b>Terbilang : </b></p>
+		<div class="sign">
+			<p id="sign-title">Penerima</p>
+			<p>(Nama Penerima)</p>
+		</div>
+		<div class="sign">
+			<p id="sign-title">Hormat Kami</p>
+			<p>(KASIR)</p>
+		</div>
+	</div>
+	<div class="detailsprice">
+		<table style="border:none;">
+			<tr>
+				<td>Sub Total</td>
+				<td>Rp. 20.000</td>
+			</tr>
+			<tr>
+				<td>Ppn</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>Disc</td>
+				<td>0%</td>
+			</tr>
+			<tr>
+				<td>Grand Total</td>
+				<td>Rp. 20.000</td>
+			</tr>
+		</table>
+	</div>
 </div>
 </body>
 </html>

@@ -15,7 +15,7 @@
 					<div class="panel-body">
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/today">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="fa fa-dollar"></i>
@@ -31,7 +31,7 @@
 				        </div>
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/pembelian">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="fa fa-shopping-cart"></i>
@@ -47,7 +47,7 @@
 				        </div>
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/penjualan">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="fa fa-shopping-bag"></i>
@@ -64,7 +64,7 @@
 						
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/labarugi">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="ti-stats-down"></i>
@@ -73,14 +73,14 @@
 					                </div>
 					                <div class="service-content">
 					                    <h3>Laba Rugi</h3>
-					                    <p>Menampilkan laporan untuk Laba Rugi per Hari, per Bulan, dan per Tahun.</p>
+					                    <p>Menampilkan laporan untuk Seluruh Laba Rugi</p>
 					                </div>
 				                </a>
 				            </div>
 				        </div>
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/stok">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class=" fa fa-cubes"></i>
@@ -96,7 +96,7 @@
 				        </div>
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/opnamestok">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class=" fa fa-cubes"></i>
@@ -110,9 +110,41 @@
 				                </a>
 				            </div>
 				        </div>
+				        <div class="col-md-3 col-sm-6 ">
+				            <div class="service-box">
+				            	<a href="<?php echo base_url(); ?>laporan/returbeli">
+					                <div class="service-icon">
+					                    <div class="front-content">
+					                        <i class=" fa fa-refresh"></i>
+					                        <h3>Retur Pembelian</h3>
+					                    </div>
+					                </div>
+					                <div class="service-content">
+					                    <h3>Retur Pembelian</h3>
+					                    <p>Menampilkan laporan untuk Data Retur Pembelian.</p>
+					                </div>
+				                </a>
+				            </div>
+				        </div>
+				        <div class="col-md-3 col-sm-6 ">
+				            <div class="service-box">
+				            	<a href="<?php echo base_url(); ?>laporan/returjual">
+					                <div class="service-icon">
+					                    <div class="front-content">
+					                        <i class=" fa fa-refresh"></i>
+					                        <h3>Retur Penjualan</h3>
+					                    </div>
+					                </div>
+					                <div class="service-content">
+					                    <h3>Retur Penjualan</h3>
+					                    <p>Menampilkan laporan untuk Data Retur Penjualan.</p>
+					                </div>
+				                </a>
+				            </div>
+				        </div>
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/hutang">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class=" fa fa-book"></i>
@@ -128,7 +160,7 @@
 				        </div>
 						<div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/piutang">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="fa fa-book"></i>
@@ -144,7 +176,7 @@
 				        </div>
 				        <div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/lunasbeli">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="fa fa-money"></i>
@@ -160,7 +192,7 @@
 				        </div>
 				        <div class="col-md-3 col-sm-6 ">
 				            <div class="service-box">
-				            	<a href="">
+				            	<a href="<?php echo base_url(); ?>laporan/lunasjual">
 					                <div class="service-icon">
 					                    <div class="front-content">
 					                        <i class="fa fa-money"></i>

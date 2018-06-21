@@ -191,6 +191,7 @@ html.fullscreen-bg #wrapper {
 #log{
   color: #696c80;
   margin-top: -5px;
+  padding-right: 0;
 }
 #log:hover{
   color: #000;

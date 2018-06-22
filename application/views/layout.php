@@ -163,7 +163,8 @@
 	                    "sPrevious": "Prev",
 	                    "sNext": "Next"
 	                }
-	            }
+	            },
+	            "iDisplayLength": 50
 	        });
 	    });
 	</script>

@@ -17,14 +17,17 @@
 				<div class="panel-heading">
 				</div>
 				  <div class="panel-body">
-					<table id="data" class="table table-striped table-hover">
+					<table id="data" class="table table-striped table-hover table-bordered">
 						<thead>
 							<th width="10">No</th>
 							<th>Kategori</th>
 							<th>Nama Barang</th>
 							<th>Satuan</th>
-							<th>Harga Beli</th>
-							<th>Harga Jual</th>
+							<th>Modal</th>
+							<th>Harga1</th>
+							<th>Harga2</th>
+							<th>Harga3</th>
+							<th>Diskon</th>
 							<th>Stok</th>
 							<th>Status</th>
 							<th width="10"></th>
@@ -51,6 +54,9 @@
 									<td>Unit</td>
 									<td>".$value['modal']."</td>
 									<td>".$value['harga1']."</td>
+									<td>".$value['harga2']."</td>
+									<td>".$value['harga3']."</td>
+									<td>".$value['diskon']."</td>
 									<td align='center'>".$stok."</td>
 									<td align='center'><span class='label label-success'>".$value['status']."</span></td>
 									<td style='text-align: left;'>

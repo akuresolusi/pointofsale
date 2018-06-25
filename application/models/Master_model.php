@@ -47,6 +47,43 @@ class Master_model extends CI_Model {
 		return $this->db->get('bank')->row_array();
 	}
 
+	// ==========================MASTER KATEGORI HARGA=======================================
+
+	public function add_kategori_harga(){
+		$data = array('kategori'=>$this->input->post('kategori')
+			    );
+		$this->db->insert('kategori_harga',$data);
+		return;
+	}
+
+	public function update_kategori_harga($id){
+		$data = array('kategori'=>$this->input->post('kategori'));
+		$this->db->where('id',$id);
+		$this->db->update('kategori_harga',$data);
+		return;
+	}
+
+	public function delete_kategori_harga($id){
+		$this->db->where('id', $id);
+		$this->db->delete('kategori_harga');
+		return;
+	}
+
+	public function list_kategori_harga(){
+		$like = $this->input->post_get('like');
+		if(isset($like)){
+			$this->db->like('kategori',$like);
+		}
+		$this->db->order_by('id','ASC');
+		$this->db->limit(100);
+		return $this->db->get('kategori_harga')->result_array();		
+	}
+
+	public function detail_kategori_harga($id){
+		$this->db->where('id',$id);
+		return $this->db->get('kategori_harga')->row_array();
+	}
+
 	// ==============================Master Syarat Bayar=============================================
 
 	public function add_syaratbayar(){
@@ -142,7 +179,6 @@ class Master_model extends CI_Model {
 
 	public function add_kategori_pelanggan(){
 		$data = array('kategori'=>$this->input->post('kategori'),
-						'harga'=>$this->input->post('harga'),
 						'status'=>1
 			    );
 		$this->db->insert('kategori_pelanggan',$data);
@@ -150,8 +186,7 @@ class Master_model extends CI_Model {
 	}
 
 	public function update_kategori_pelanggan($id){
-		$data = array('kategori' => $this->input->post('kategori'),
-					  'harga'=>$this->input->post('harga')
+		$data = array('kategori' => $this->input->post('kategori')
 					);
 		$this->db->where('id',$id);
 		$this->db->update('kategori_pelanggan',$data);
@@ -169,10 +204,9 @@ class Master_model extends CI_Model {
 		$like = $this->input->post_get('like');
 		if(isset($like)){
 			$this->db->like('kategori',$like);
-			$this->db->or_like('harga',$like);
 		}
 		$this->db->where('status',1);
-		$this->db->order_by('id','DESC');
+		$this->db->order_by('id','ASC');
 		$this->db->limit(100);
 		return $this->db->get('kategori_pelanggan')->result_array();		
 	}
@@ -474,6 +508,7 @@ class Master_model extends CI_Model {
 						'idkategori'=>$this->input->post('kategori'),
 						'jeniskelamin'=>$this->input->post('jeniskelamin'),
 						'email'=>$this->input->post('email'),
+						'kategorih'=>$this->input->post('kategorih'),
 					  	'status'=>1
 			    	);
 		$this->db->insert('pelanggan',$data);
@@ -487,6 +522,7 @@ class Master_model extends CI_Model {
 						'nohp'=>$this->input->post('nohp'),
 						'idkategori'=>$this->input->post('kategori'),
 						'jeniskelamin'=>$this->input->post('jeniskelamin'),
+						'kategorih'=>$this->input->post('kategorih'),
 						'email'=>$this->input->post('email')
 			    	);
 		$this->db->where('id',$id);
@@ -509,6 +545,8 @@ class Master_model extends CI_Model {
 			$this->db->or_like('nohp',$like);
 			$this->db->or_like('email',$like);
 			$this->db->or_like('jeniskelamin',$like);
+			$this->db->or_like('kategorih',$like);
+				
 		}
 		$this->db->where('status',1);
 		$this->db->order_by('id','DESC');

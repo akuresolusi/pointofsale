@@ -257,7 +257,7 @@ option{
           <h4 class="modal-title">Tambah Data Barang</h4>
         </div>
         <div class="modal-body">
-          <iframe src="<?php echo base_url('barang/tambah2'); ?>" width="100%" style="border:0px;" scrolling="no" height="400"></iframe>
+          <!-- <iframe src="<?php echo base_url('barang/tambah2'); ?>" width="100%" style="border:0px;" scrolling="y" height="400"></iframe> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
@@ -267,7 +267,6 @@ option{
     </div>
   </div>
 <!-- END MODAL -->
-
 
 
 

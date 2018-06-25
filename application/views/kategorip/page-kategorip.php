@@ -19,7 +19,6 @@
 							<thead>
 								<th width="20">No</th>
 								<th width="700">Kategori Pelanggan</th>
-								<th width="300">Kategori Harga</th>
 								<th width="10">Aksi</th>
 							</thead>
 							<tbody>
@@ -31,14 +30,12 @@
 										<tr>
 											<td>".$i."</td>
 											<td>".$value['kategori']."</td>
-											<td>Harga ".$value['harga']."</td>
 											<td style='text-align: center;'>
 												<div class='dropdown'>
 											        <a href='#' class='btn btn-primary btn-xs' data-toggle='dropdown' class='dropdown-toggle' role='button' aria-haspopup='true' aria-expanded='false' title='Action'><span class='fa fa-gear'></span></a>
 											        <ul class='dropdown-menu pull-right'>
 											            <li><a href='#' value_id='".$value['id']."' 
-														value_kategori='".$value['kategori']."'' 
-														value_harga='".$value['harga']."''
+														value_kategori='".$value['kategori']."''
 														class='edit' data-toggle='modal' data-target='#myModaledit' 
 													><span class='fa fa-edit'></span> Edit Data</a></li>
 											            <li><a href='".base_url()."kategorip/hapus_kategori_pelanggan?id=".$value['id']."'><span class='fa fa-trash'></span> Hapus Data</a></li>
@@ -76,17 +73,6 @@
 			  	<div class=" form-group">
 			  		<label>Kategori Pelanggan</label>
 			  		<input type="text" name="kategori" class="form-control" placeholder="Kategori Pelangan">
-			  	</div>
-			  	<div class=" form-group">
-			  		<label>Kategori Harga</label>
-			  		<select class="form-control" name="harga">
-			  			<?php 
-			  				$data = array('1','2','3','4','5');
-			  				foreach ($data as $value) {
-			  					echo "<option value='".$value."'>Harga ".$value."</option>";
-			  				}
-			  			?>
-			  		</select>
 			  	</div>
 			    <div  class="form-group">
 			    	<button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Simpan</button>
@@ -126,17 +112,6 @@
 			  		<label>Kategori Pelanggan</label>
 			  		<input type="hidden" name="id" id="id_input">
 			  		<input type="text" name="kategori" id="kategori_input" class="form-control" placeholder="Kategori Barang">
-			  	</div>
-			  	<div class=" form-group">
-			  		<label>Kategori Harga</label>
-			  		<select class="form-control" name="harga" id="harga_input">
-			  			<?php 
-			  				$data = array('1','2','3','4','5');
-			  				foreach ($data as $value) {
-			  					echo "<option value='".$value."'>Harga ".$value."</option>";
-			  				}
-			  			?>
-			  		</select>
 			  	</div>
 			    <div  class="form-group">
 			    	<button type="submit" class="btn btn-primary"><span class="fa fa-save"></span> Simpan</button>

@@ -32,11 +32,11 @@
 				  		<label>Telp/No Hp</label>
 				  		<input type="text" name="nohp" class="form-control" placeholder="No Hp">
 				  	</div>
-				    <div class="form-group col-md-4">
+				    <div class="form-group col-md-3">
 				  		<label>Email</label>
 				  		<input type="email" name="email" class="form-control" placeholder="Email">
 				  	</div>
-				  	<div class="form-group col-md-4">
+				  	<div class="form-group col-md-3">
 				    	<label>Kota</label> 
 				    	<select name="kota" class="form-control">
 				    		<option value="">- Pilih kota -</option>
@@ -47,11 +47,21 @@
 				    		?>
 					    </select>
 				    </div>
-				    <div class="form-group col-md-4">
+				    <div class="form-group col-md-3">
 				    	<label>Kategori</label> 
 				    	<select name="kategori" class="form-control"  required="">
 					    	<?php
 				    			foreach ($list_kategori_pelanggan as $value) {
+				    				echo "<option value='".$value['id']."'>".$value['kategori']."</option>";
+				    			}
+				    		?>
+					    </select>
+				    </div>
+				    <div class="form-group col-md-3">
+				    	<label>Kategori Harga</label> 
+				    	<select name="kategorih" class="form-control"  required="">
+					    	<?php
+				    			foreach ($list_kategori_harga as $value) {
 				    				echo "<option value='".$value['id']."'>".$value['kategori']."</option>";
 				    			}
 				    		?>

@@ -76,12 +76,17 @@ option{
 			</div>
 		<div class="panel panel-default">
 		    	<div class="panel-body">
-						<div class="form-group col-md-4">
-				    	<label>Kategori</label>
+					<div class="form-group col-md-3">
+				    	<label>Kategori Pelanggan</label>
 				    	<input type="text" id="kategoripelanggan" value="-" class="form-control" readonly>
-				    	<input type="hidden" id="kategoriharga">
+				    	<input type="hidden" id="idkategorip">
+				    	<input type="hidden" id="idkategorih">
 				    </div>
-				    <div class="form-group col-md-4">
+				    <div class="form-group col-md-3">
+				    	<label>Kategori Harga</label>
+				    	<input type="text" id="kategoriharga" value="-" class="form-control" readonly>
+				    </div>
+				    <div class="form-group col-md-3">
 				    	<label>Syarat Bayar</label>
 				    	<select class="form-control" name="syaratbayar" required="">
 				    		<?php
@@ -91,7 +96,7 @@ option{
 				    		?>
 				    	</select>
 				    </div>
-				    <div class="form-group col-md-4">
+				    <div class="form-group col-md-3">
 				    	<label>Tanggal Faktur</label>
 				      	<input type="date" name="tanggal" required="" value="<?php echo date('Y-m-d') ?>" class="form-control">
 				    </div>
@@ -244,7 +249,9 @@ option{
 		$("#namapelanggan").val($(this).attr('value_nama'));
 		$("#alamatpelanggan").val($(this).attr('value_alamat'));
 		$("#kategoripelanggan").val($(this).attr('value_kategori'));
-		$("#kategoriharga").val($(this).attr('value_kategoriharga'));
+		$("#kategoriharga").val($(this).attr('value_kategori_harga'));
+		$("#idkategorih").val($(this).attr('value_idkategorih'));
+		$("#idkategorip").val($(this).attr('value_idkategorip'));
 		hapus_form();	
 	});
 
@@ -309,12 +316,12 @@ option{
 	});
 
 
-	function ambil_harga(id, harga){
+	function ambil_harga(id, kategorip, kategorih){
 		$.ajax({
 			url: "<?php echo base_url(); ?>penjualan/ambil_harga",
 			type: "post",
 			cache: false,
-			data: "id=" + id + "&harga=" + harga,
+			data: "id=" + id + "&kategorip=" + kategorip + "&kategorih=" + kategorih,
 			dataType: "html",
 			success: function(data){
 				$("#harga").val(data);
@@ -336,7 +343,7 @@ option{
 		$("#namabarang").val(nama);
 		$("#modalbarang").val(modal);
 		$("#qty").val(1);
-		ambil_harga(id, $("#kategoriharga").val());	
+		ambil_harga(id, $("#idkategorip").val(), $("#idkategorih").val());	
 
 	});
 

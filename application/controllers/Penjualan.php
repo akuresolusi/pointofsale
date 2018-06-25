@@ -42,6 +42,7 @@ class Penjualan extends CI_Controller {
 				foreach($pelanggan as $value){
 					$i++;
 					$kategori = $this->master_model->detail_kategori_pelanggan($value['idkategori']);
+					$kategorih = $this->master_model->detail_kategori_harga($value['kategorih']);
 					$json["datanya"] .= "
 						<tr>
 			  				<td>".$i."</td>
@@ -55,7 +56,9 @@ class Penjualan extends CI_Controller {
 			  				value_nama='".$value['nama']."'
 			  				value_alamat='".$value['alamat']."'
 			  				value_kategori='".$kategori['kategori']."'
-			  				value_kategoriharga='".$kategori['harga']."'
+			  				value_kategori_harga='".$kategorih['kategori']."'
+			  				value_idkategorip='".$value['idkategori']."'
+			  				value_idkategorih='".$value['kategorih']."'
 			  				>Pilih</button></td>
 			  			</tr>";
 				}
@@ -67,19 +70,11 @@ class Penjualan extends CI_Controller {
 	}
 
 	public function ambil_harga(){
-		$harga = $this->input->post_get('harga');
-		$barang = $this->barang_model->detail_barang($this->input->post_get('id'));
-		if($harga == 1){
-			echo $barang['harga1'];
-		}else if($harga == 2){
-			echo $barang['harga2'];
-		}else if($harga == 3){
-			echo $barang['harga3'];
-		}else if($harga == 4){
-			echo $barang['harga4'];
-		}else if($harga == 5){
-			echo $barang['harga5'];
-		}
+		$idbarang = $this->input->post('id');
+		$kategorip = $this->input->post('kategorip');
+		$kategorih = $this->input->post('kategorih');
+		$harga_jual = $this->barang_model->detail_harga_jual($idbarang, $kategorih, $kategorip);
+		echo $harga_jual['harga'];
 	}
 
 	public function input_item(){

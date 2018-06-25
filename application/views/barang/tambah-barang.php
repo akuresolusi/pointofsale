@@ -40,7 +40,8 @@
 					    		?>
 						    </select>
 					    </div>
-					    <div class="form-group col-md-3">
+
+					    <!-- <div class="form-group col-md-3">
 					    	<label>Warna</label> 
 					    	<select class="form-control" name="warna" required="">
 						    	<?php
@@ -60,34 +61,47 @@
 					    			}
 					    		?>
 						    </select>
-					    </div>
+					    </div> -->
+
+
 					    <div class="form-group col-md-3">
-					    	<label>Harga 1</label>
-					      	<input type="number" class="form-control" name="harga1" placeholder="Harga 1">
-					    </div>
-					    <div class="form-group col-md-3">
-					    	<label>Harga 2</label>
-					      	<input type="number" class="form-control" name="harga2" placeholder="Harga 2">
-					    </div>
-					    <div class="form-group col-md-3">
-					    	<label>Harga 3</label>
-					      	<input type="number" class="form-control" name="harga3" placeholder="Harga 3">
-					    </div>
-					    <div class="form-group col-md-3">
-					    	<label>Harga 4</label>
-					      	<input type="number" class="form-control" name="harga4" placeholder="Harga 4">
-					    </div>
-					    <div class="form-group col-md-3">
-					    	<label>Harga 5</label>
-					      	<input type="number" class="form-control" name="harga5" placeholder="Harga 5">
-					    </div>
-					     <div class="form-group col-md-3">
 					    	<label>Kontrol Stok ?</label>
 					    	<div class="form-group">
-						    	<label><input type="radio"  name="kontrol" value="1" required=""> Ya</label>&nbsp;&nbsp;&nbsp;
+						    	<label><input type="radio" checked=""  name="kontrol" value="1" required=""> Ya</label>&nbsp;&nbsp;&nbsp;
 						    	<label><input type="radio"  name="kontrol" value="0" required=""> Tidak</label>
 					    	</div>
 					    </div>
+
+					    <div class="form-group col-md-8">
+					    	<label>Harga Jual Barang/Jasa</label>
+					    	<table class="table table-striped table-hover table-bordered">
+					    		<thead>
+					    			<tr>
+					    				<th width="150px">Kategori Harga</th>
+					    				<?php
+					    				foreach ($list_kategorip as $value) {
+					    					echo"<th>".$value['kategori']."</th>";
+					    				}
+					    				?>
+					    			</tr>
+					    		</thead>
+					    		<tbody>
+				    				<?php
+				    				foreach ($list_kategorih as $value) {
+				    					echo"
+				    					<tr>
+				    						<td>".$value['kategori']."</td>";
+				    						foreach ($list_kategorip as $value2) {
+						    					echo"<td><input type='number' name='".$value['id']."-".$value2['id']."' class='form-control' /></td>";
+						    				}
+				    					echo"
+				    					</tr>";
+				    				}
+				    				?>
+					    		</tbody>
+					    	</table>
+					    </div>
+
 					    <div  class="form-group col-md-12">
 					    	<button type="submit" class="btn btn-info" style="margin-bottom: 10px;"><span class="fa fa-save"></span> Simpan</button>
 					    	<a href="<?php echo base_url(); ?>barang" class="btn btn-warning" style="margin-bottom: 10px;""><span class="fa fa-list"></span> Daftar Barang</a>

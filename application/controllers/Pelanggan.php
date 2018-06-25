@@ -18,6 +18,7 @@ class Pelanggan extends CI_Controller {
 	public function tambah(){
 		$data['list_kota'] = $this->master_model->list_kota();
 		$data['list_kategori_pelanggan'] = $this->master_model->list_kategori_pelanggan();
+		$data['list_kategori_harga'] = $this->master_model->list_kategori_harga();
 		$data['isi'] =  "pelanggan/tambah-pelanggan";
 		$data['title'] = 'Tambah Data Pelanggan';
 		$this->load->view('layout',$data);	
@@ -27,6 +28,7 @@ class Pelanggan extends CI_Controller {
 		$data['detail'] = $this->master_model->detail_pelanggan($this->input->post_get('id'));
 		$data['list_kota'] = $this->master_model->list_kota();
 		$data['list_kategori_pelanggan'] = $this->master_model->list_kategori_pelanggan();
+		$data['list_kategori_harga'] = $this->master_model->list_kategori_harga();
 		$data['isi'] =  "pelanggan/edit-pelanggan";
 		$data['title'] = 'Perbarui Data Pelanggan';
 		$this->load->view('layout',$data);	

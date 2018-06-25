@@ -36,11 +36,11 @@
 				  		<label>Telp/No Hp</label>
 				  		<input type="text" name="nohp" value="<?php echo $detail['nohp']; ?>" class="form-control" placeholder="No Hp">
 				  	</div>
-				    <div class="form-group col-md-4">
+				    <div class="form-group col-md-3">
 				  		<label>Email</label>
 				  		<input type="email" name="email" value="<?php echo $detail['email']; ?>" class="form-control" placeholder="Email" required="">
 				  	</div>
-				  	<div class="form-group col-md-4">
+				  	<div class="form-group col-md-3">
 				    	<label>Kota</label> 
 				    	<select name="kota" class="form-control"  required="">
 					    	<?php
@@ -54,12 +54,26 @@
 				    		?>
 					    </select>
 				    </div>
-				    <div class="form-group col-md-4">
+				    <div class="form-group col-md-3">
 				    	<label>Kategori</label> 
 				    	<select name="kategori" class="form-control"  required="">
 					    	<?php
 				    			foreach ($list_kategori_pelanggan as $value) {
 				    				if($value['id'] == $detail['idkategori']){
+				    					echo "<option value='".$value['id']."' selected>".$value['kategori']."</option>";
+				    				}else{
+				    					echo "<option value='".$value['id']."'>".$value['kategori']."</option>";
+				    				}
+				    			}
+				    		?>
+					    </select>
+				    </div>
+				    <div class="form-group col-md-3">
+				    	<label>Kategori Harga</label> 
+				    	<select name="kategorih" class="form-control"  required="">
+					    	<?php
+				    			foreach ($list_kategori_harga as $value) {
+				    				if($value['id'] == $detail['kategorih']){
 				    					echo "<option value='".$value['id']."' selected>".$value['kategori']."</option>";
 				    				}else{
 				    					echo "<option value='".$value['id']."'>".$value['kategori']."</option>";

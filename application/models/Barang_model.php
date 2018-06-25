@@ -13,31 +13,17 @@ class Barang_model extends CI_Model {
 						'nama' => $this->input->post('nama'),
 						'idkategori' => $this->input->post('kategori'),
 						'idsatuan' => $this->input->post('satuan'),
-						'idwarna' => $this->input->post('warna'),
 						'kontrolstok' => $this->input->post('kontrol'),
-						'ukuran' => $this->input->post('ukuran'),
-						'harga1' => $this->input->post('harga1'),
-						'harga2' => $this->input->post('harga2'),
-						'harga3' => $this->input->post('harga3'),
-						'harga4' => $this->input->post('harga4'),
-						'harga5' => $this->input->post('harga5'),
 						'status' => "Aktif"
 					);
 		$this->db->insert('barang',$data);
-		return;
+		return $this->db->insert_id();
 	}
 
 	public function update_barang(){
 		$data =  array( 'nama' => $this->input->post('nama'),
 						'idkategori' => $this->input->post('kategori'),
-						'idsatuan' => $this->input->post('satuan'),
-						'idwarna' => $this->input->post('warna'),
-						'ukuran' => $this->input->post('ukuran'),
-						'harga1' => $this->input->post('harga1'),
-						'harga2' => $this->input->post('harga2'),
-						'harga3' => $this->input->post('harga3'),
-						'harga4' => $this->input->post('harga4'),
-						'harga5' => $this->input->post('harga5')
+						'idsatuan' => $this->input->post('satuan')
 					);
 		$this->db->where('id',$this->input->post_get('id'));
 		$this->db->update('barang',$data);
@@ -47,6 +33,13 @@ class Barang_model extends CI_Model {
 	public function detail_barang($id){
 		$this->db->where('id',$id);
 		return $this->db->get('barang')->row_array();
+	}
+
+	public function detail_harga_jual($idbarang, $idkh, $idkp){
+		$this->db->where('idbarang',$idbarang);
+		$this->db->where('kategorih',$idkh);
+		$this->db->where('kategorip',$idkp);
+		return $this->db->get('harga_jual')->row_array();
 	}
 
 	public function list_barang(){
@@ -80,6 +73,12 @@ class Barang_model extends CI_Model {
 	public function delete_barang($id){
 		$this->db->where('id',$id);
 		$this->db->delete('barang');
+		return;
+	}
+
+	public function delete_harga_jual($id){
+		$this->db->where('idbarang',$id);
+		$this->db->delete('harga_jual');
 		return;
 	}
 
@@ -123,6 +122,17 @@ class Barang_model extends CI_Model {
 		$data = array('modal' => $modal);
 		$this->db->where('id',$id);
 		$this->db->update('barang',$data);
+		return;
+	}
+
+
+	public function input_harga_jual($id, $idp, $idh, $harga){
+		$data =  array( 'idbarang' => $id,
+						'kategorip' => $idp,
+						'kategorih' => $idh,
+						'harga' => $harga
+					);
+		$this->db->insert('harga_jual',$data);
 		return;
 	}
 

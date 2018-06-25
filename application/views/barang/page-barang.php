@@ -24,10 +24,6 @@
 							<th>Nama Barang</th>
 							<th>Satuan</th>
 							<th>Modal</th>
-							<th>Harga1</th>
-							<th>Harga2</th>
-							<th>Harga3</th>
-							<th>Diskon</th>
 							<th>Stok</th>
 							<th>Status</th>
 							<th width="10"></th>
@@ -53,10 +49,6 @@
 									<td>".$value['nama']."</td>
 									<td>Unit</td>
 									<td>".$value['modal']."</td>
-									<td>".$value['harga1']."</td>
-									<td>".$value['harga2']."</td>
-									<td>".$value['harga3']."</td>
-									<td>".$value['diskon']."</td>
 									<td align='center'>".$stok."</td>
 									<td align='center'><span class='label label-success'>".$value['status']."</span></td>
 									<td style='text-align: left;'>

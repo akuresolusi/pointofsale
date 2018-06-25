@@ -21,6 +21,7 @@
 								<th style="text-align: left;">No</th>
 								<th>Nama</th>
 								<th>Jenis Kelamin</th>
+								<th>Kategori Harga</th>
 								<th>Telp/No Hp</th>
 								<th>Email</th>
 								<th>Alamat</th>
@@ -30,12 +31,17 @@
 							<?php
 								$i=0;
 								foreach ($list_pelanggan as $value) {
+									$kategorih = $this->master_model->detail_kategori_harga($value['kategorih'])['kategori'];
+									if($kategorih == ""){
+										$kategorih = "-";
+									}
 									$i++;
 									echo"
 									<tr>
 										<td>".$i."</td>
 										<td>".$value['nama']."</td>
 										<td>".$value['jeniskelamin']."</td>
+										<td>".$kategorih."</td>
 										<td>".$value['nohp']."</td>
 										<td>".$value['email']."</td>
 										<td>".$value['alamat']."</td>

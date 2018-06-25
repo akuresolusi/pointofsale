@@ -34,6 +34,8 @@ class Barang extends CI_Controller {
 		$data['list_kategori'] = $this->master_model->list_kategori();
 		$data['list_satuan'] = $this->master_model->list_satuan();
 		$data['list_warna'] = $this->master_model->list_warna();
+		$data['list_kategorip'] = $this->master_model->list_kategori_pelanggan();
+		$data['list_kategorih'] = $this->master_model->list_kategori_harga();
 		$data['isi'] =  "barang/tambah-barang";
 		$data['title'] = 'Tambah Data Barang';
 		$this->load->view('layout',$data);
@@ -43,16 +45,43 @@ class Barang extends CI_Controller {
 		$data['list_kategori'] = $this->master_model->list_kategori();
 		$data['list_satuan'] = $this->master_model->list_satuan();
 		$data['list_warna'] = $this->master_model->list_warna();
+		$data['list_kategorip'] = $this->master_model->list_kategori_pelanggan();
+		$data['list_kategorih'] = $this->master_model->list_kategori_harga();
 		$this->load->view('barang/tambah2-barang',$data);
 	}
 
 	public function proses_tambah(){
-		$this->barang_model->add_barang();
+
+		$id = $this->barang_model->add_barang();
+
+		$kategorip = $this->master_model->list_kategori_pelanggan();
+		$kategorih = $this->master_model->list_kategori_harga();
+		foreach ($kategorih as $value) {
+			foreach ($kategorip as $value2) {
+				// echo $value['kategori'] ." ". $value2['kategori'] ." ==";
+				$harga = $this->input->post($value['id']."-".$value2['id']);
+				if($harga > 0){
+					$this->barang_model->input_harga_jual($id, $value2['id'], $value['id'], $harga);
+				}
+			}
+		}
 		redirect('barang');	
 	}
 
 	public function proses_tambah2(){
-		$this->barang_model->add_barang();
+		$id = $this->barang_model->add_barang();
+
+		$kategorip = $this->master_model->list_kategori_pelanggan();
+		$kategorih = $this->master_model->list_kategori_harga();
+		foreach ($kategorih as $value) {
+			foreach ($kategorip as $value2) {
+				// echo $value['kategori'] ." ". $value2['kategori'] ." ==";
+				$harga = $this->input->post($value['id']."-".$value2['id']);
+				if($harga > 0){
+					$this->barang_model->input_harga_jual($id, $value2['id'], $value['id'], $harga);
+				}
+			}
+		}
 		echo "Data Barang Berhasil Ditambahkan
 		<meta http-equiv='refresh' content=4;URL='".base_url('barang/tambah2')."' /> 
 		";
@@ -63,6 +92,9 @@ class Barang extends CI_Controller {
 		$data['list_kategori'] = $this->master_model->list_kategori();
 		$data['list_satuan'] = $this->master_model->list_satuan();
 		$data['list_warna'] = $this->master_model->list_warna();
+		$data['list_kategorip'] = $this->master_model->list_kategori_pelanggan();
+		$data['list_kategorih'] = $this->master_model->list_kategori_harga();
+
 		$data['isi'] =  "barang/update-barang";
 		$data['title'] = 'Perbarui Data Barang';
 		$this->load->view('layout',$data);
@@ -70,6 +102,25 @@ class Barang extends CI_Controller {
 
 	public function proses_edit(){
 		$this->barang_model->update_barang();
+		
+		$id = $this->input->get('id');
+
+		//hapus harga jual lama
+		$this->barang_model->delete_harga_jual($id);
+
+		//input kembali harga jual yang baru
+		$kategorip = $this->master_model->list_kategori_pelanggan();
+		$kategorih = $this->master_model->list_kategori_harga();
+		foreach ($kategorih as $value) {
+			foreach ($kategorip as $value2) {
+				// echo $value['kategori'] ." ". $value2['kategori'] ." ==";
+				$harga = $this->input->post($value['id']."-".$value2['id']);
+				if($harga > 0){
+					$this->barang_model->input_harga_jual($id, $value2['id'], $value['id'], $harga);
+				}
+			}
+		}
+
 		redirect('barang');
 	}
 
@@ -85,6 +136,7 @@ class Barang extends CI_Controller {
 
 	public function hapus_barang(){
 		$this->barang_model->delete_barang($this->input->get('id'));
+		$this->barang_model->delete_harga_jual($this->input->get('id'));
 		redirect('barang');
 	}
 

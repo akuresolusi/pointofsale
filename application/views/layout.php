@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-chosen.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/themify-icons/themify-icons.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/linearicons/style.css">
@@ -63,7 +62,17 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="<?php echo base_url(); ?>dashboard"><i class="ti-dashboard red"></i> <span>Dashboard</span></a></li>
-						<li><a href="<?php echo base_url() ?>laporan"><i class="ti-agenda brown"></i> <span>Laporan</span></a></li>
+						<li>
+							<a href="#1" data-toggle="collapse" class="collapsed"><i class="ti-agenda brown"></i> <span>Laporan</span> <i class="icon-submenu ti-angle-left"></i></a>
+							<div id="1" class="collapse ">
+								<ul class="nav">
+									<li><a href="<?php echo base_url() ?>laporan/produk" class=""><i class="ti-package blue"></i> Laporan Produk</a></li>
+									<li><a href="<?php echo base_url() ?>laporan/pembelian" class=""><i class="ti-shopping-cart green"></i> Laporan Pembelian</a></li>
+									<li><a href="<?php echo base_url() ?>laporan/penjualan" class=""><i class="ti-bag purple"></i> Laporan Penjualan</a></li>
+									<li><a href="<?php echo base_url() ?>laporan/etc" class=""><i class="ti-bar-chart red"></i> Laporan Lainnya</a></li>
+								</ul>
+							</div>
+						</li>
 						<li class="group">Inventaris</li>
 						<li><a href="<?php echo base_url() ?>barang"><i class="ti-package blue"></i> <span>Data Barang</span></a></li>
 						<li class="group">Transaksi</li>
@@ -94,8 +103,8 @@
 						<li><a href="#"><i class="ti-agenda orange"></i> <span>Biaya Beban</span></a></li>
 						<li class="group">Setting Data</li>
 						<li>
-							<a href="#1" data-toggle="collapse" class="collapsed"><i class="ti-settings light-blue"></i> <span>Master Data</span> <i class="icon-submenu ti-angle-left"></i></a>
-							<div id="1" class="collapse ">
+							<a href="#4" data-toggle="collapse" class="collapsed"><i class="ti-settings light-blue"></i> <span>Master Data</span> <i class="icon-submenu ti-angle-left"></i></a>
+							<div id="4" class="collapse ">
 								<ul class="nav">
 									<li><a href="<?php echo base_url() ?>supplier" class=""><i class="ti-user orange"></i> Supplier</a></li>
 									<li><a href="<?php echo base_url() ?>pelanggan" class=""><i class="ti-user green"></i> Pelanggan</a></li>
@@ -174,7 +183,7 @@
     $('#scroll').slimScroll({
 	    height: 'auto',
 	    size: '10px',
-	    color:'#ccc'
+	    color:'#bbb'
 	    });
 	});
 	</script>

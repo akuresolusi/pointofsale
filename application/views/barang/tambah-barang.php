@@ -12,15 +12,15 @@
 		    	<div class="panel-body">
 					<?php echo form_open_multipart('barang/proses_tambah'); ?>
 					  	<div class="form-group">
-					  	<div class="form-group col-md-4">
+					  	<div class="form-group col-md-6">
 					  		<label>Kode Barang</label>
 					  		<input type="text" class="form-control" required="" name="kode" placeholder="Kode Barang">
 					  	</div>
-					    <div class="form-group col-md-4">
+					    <div class="form-group col-md-6">
 					    	<label>Nama Barang</label>
 					      	<input type="text" class="form-control" required="" name="nama" placeholder="Nama Barang">
 					    </div>
-					    <div class="form-group col-md-4">
+					    <div class="form-group col-md-6">
 					    	<label>Kategori Barang</label> 
 					    	<select class="form-control" name="kategori" required="">
 						    	<?php
@@ -30,7 +30,7 @@
 					    		?>
 						    </select>
 					    </div>
-					    <div class="form-group col-md-3">
+					    <div class="form-group col-md-6">
 					    	<label>Satuan</label> 
 					    	<select class="form-control" name="satuan" required="">
 						    	<?php
@@ -64,7 +64,7 @@
 					    </div> -->
 
 
-					    <div class="form-group col-md-3">
+					    <div class="form-group col-md-12">
 					    	<label>Kontrol Stok ?</label>
 					    	<div class="form-group">
 						    	<label><input type="radio" checked=""  name="kontrol" value="1" required=""> Ya</label>&nbsp;&nbsp;&nbsp;
@@ -72,9 +72,9 @@
 					    	</div>
 					    </div>
 
-					    <div class="form-group col-md-8">
+					    <div class="form-group col-md-12">
 					    	<label>Harga Jual Barang/Jasa</label>
-					    	<table class="table table-striped table-hover table-bordered">
+					    	<table class="table">
 					    		<thead>
 					    			<tr>
 					    				<th width="150px">Kategori Harga</th>
@@ -111,7 +111,7 @@
 						<?php echo form_close(); ?>
 			    	</div>
 				</div>
-					<div class="panel panel-default">
+<!-- 					<div class="panel panel-default">
 			    		<div class="panel-body">
 							  	<div class=" form-group col-md-12">
 							  		<label>Import Data</label>
@@ -121,6 +121,6 @@
 					    			<a href=""><button class="btn btn-info"><span class="fa fa-download"></span> Import</button></a>
 								</div>
 							</div>
-			  			</div>
+			  			</div> -->
 					</div>
 <!-- END MAIN CONTENT

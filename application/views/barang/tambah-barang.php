@@ -71,7 +71,10 @@
 						    	<label><input type="radio"  name="kontrol" value="0" required=""> Tidak</label>
 					    	</div>
 					    </div>
-
+					    <div class="form-group col-md-12">
+					    	<label>Harga Dasar</label>
+					      	<input type="number" class="form-control" required="" id="hargadasar" name="harga" placeholder="Harga Dasar">
+					    </div>
 					    <div class="form-group col-md-12">
 					    	<label>Harga Jual Barang/Jasa</label>
 					    	<table class="table">
@@ -87,12 +90,13 @@
 					    		</thead>
 					    		<tbody>
 				    				<?php
-				    				foreach ($list_kategorih as $value) {
+				    				foreach ($list_kategorih as $value){
 				    					echo"
 				    					<tr>
-				    						<td>".$value['kategori']."</td>";
+				    						<td>".$value['kategori']."<input type='hidden' id='".$value['id']."h'></td>";
 				    						foreach ($list_kategorip as $value2) {
-						    					echo"<td><input type='number' name='".$value['id']."-".$value2['id']."' class='form-control' /></td>";
+				    							$name = $value['id']."-".$value2['id'] ;
+						    					echo"<td><input type='number' name='".$name."' id='".$name."' class='form-control' /></td>";
 						    				}
 				    					echo"
 				    					</tr>";
@@ -112,15 +116,48 @@
 			    	</div>
 				</div>
 <!-- 					<div class="panel panel-default">
+							  			<input type="file" class="form-control">
+							  	</div>
 			    		<div class="panel-body">
 							  	<div class=" form-group col-md-12">
 							  		<label>Import Data</label>
-							  			<input type="file" class="form-control">
-							  	</div>
 							  	<div class="form-group col-md-12" style="margin-bottom: 0px;">
 					    			<a href=""><button class="btn btn-info"><span class="fa fa-download"></span> Import</button></a>
 								</div>
 							</div>
 			  			</div> -->
-					</div>
-<!-- END MAIN CONTENT
+				</div>
+
+
+<script type="text/javascript">
+	
+	$("#hargadasar").keyup(function() {
+		<?php foreach ($list_kategorih as $value){ ?>
+			set_kategori_harga_<?php echo $value['id'] ?>($("#hargadasar").val());
+		<?php } ?>	
+	});
+
+	<?php foreach ($list_kategorih as $value){ 
+		$persen = $value['persen'];
+		if($persen == "" || $persen < 0){ $persen = "0";}
+	?>
+		function set_kategori_harga_<?php echo $value['id'] ?>(hargadasar){
+			var persen = <?php echo $persen; ?>;
+			var hasil = hargadasar / 100 * persen ;
+			document.getElementById("<?php echo $value['id']."h" ?>").value = hasil.toFixed(0);
+
+			<?php foreach ($list_kategorip as $value2) { 
+				$persen2 = $value2['persen'];
+				if($persen2 == "" || $persen2 < 0){ $persen2 = "0";}
+			?>
+				var hargajual = hasil / 100 * <?php echo $persen2; ?>;
+				document.getElementById("<?php echo $value['id']."-".$value2['id'] ?>").value = hargajual.toFixed(0);
+
+			<?php } ?>
+
+		}
+
+	<?php } ?>
+	
+
+</script>

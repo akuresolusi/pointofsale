@@ -14,6 +14,7 @@ class Barang_model extends CI_Model {
 						'idkategori' => $this->input->post('kategori'),
 						'idsatuan' => $this->input->post('satuan'),
 						'kontrolstok' => $this->input->post('kontrol'),
+						'hargadasar' => $this->input->post('harga'),
 						'status' => "Aktif"
 					);
 		$this->db->insert('barang',$data);
@@ -23,6 +24,7 @@ class Barang_model extends CI_Model {
 	public function update_barang(){
 		$data =  array( 'nama' => $this->input->post('nama'),
 						'idkategori' => $this->input->post('kategori'),
+						'hargadasar' => $this->input->post('harga'),
 						'idsatuan' => $this->input->post('satuan')
 					);
 		$this->db->where('id',$this->input->post_get('id'));

@@ -50,14 +50,16 @@ class Master_model extends CI_Model {
 	// ==========================MASTER KATEGORI HARGA=======================================
 
 	public function add_kategori_harga(){
-		$data = array('kategori'=>$this->input->post('kategori')
+		$data = array('kategori'=>$this->input->post('kategori'),
+						'persen'=>$this->input->post('persen')
 			    );
 		$this->db->insert('kategori_harga',$data);
 		return;
 	}
 
 	public function update_kategori_harga($id){
-		$data = array('kategori'=>$this->input->post('kategori'));
+		$data = array('kategori'=>$this->input->post('kategori'),
+					  'persen'=>$this->input->post('persen'));
 		$this->db->where('id',$id);
 		$this->db->update('kategori_harga',$data);
 		return;
@@ -73,6 +75,7 @@ class Master_model extends CI_Model {
 		$like = $this->input->post_get('like');
 		if(isset($like)){
 			$this->db->like('kategori',$like);
+			$this->db->or_like('kategori',$like);
 		}
 		$this->db->order_by('id','ASC');
 		$this->db->limit(100);
@@ -178,15 +181,17 @@ class Master_model extends CI_Model {
 	// ==============================Master Kategori Pelanggan=============================================
 
 	public function add_kategori_pelanggan(){
-		$data = array('kategori'=>$this->input->post('kategori'),
-						'status'=>1
+		$data = array('kategori' => $this->input->post('kategori'),
+						'persen'=>$this->input->post('persen'),
+						'status' => 1
 			    );
 		$this->db->insert('kategori_pelanggan',$data);
 		return;
 	}
 
 	public function update_kategori_pelanggan($id){
-		$data = array('kategori' => $this->input->post('kategori')
+		$data = array('kategori' => $this->input->post('kategori'),
+						'persen'=>$this->input->post('persen')
 					);
 		$this->db->where('id',$id);
 		$this->db->update('kategori_pelanggan',$data);
@@ -204,6 +209,7 @@ class Master_model extends CI_Model {
 		$like = $this->input->post_get('like');
 		if(isset($like)){
 			$this->db->like('kategori',$like);
+			$this->db->or_like('kategori',$like);
 		}
 		$this->db->where('status',1);
 		$this->db->order_by('id','ASC');

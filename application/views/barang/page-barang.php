@@ -25,6 +25,7 @@
 							<th>Satuan</th>
 							<th>Modal</th>
 							<th>Stok</th>
+							<th>Harga Dasar</th>
 							<th>Status</th>
 							<th width="10"></th>
 						</thead>
@@ -50,6 +51,7 @@
 									<td>Unit</td>
 									<td>".$value['modal']."</td>
 									<td align='center'>".$stok."</td>
+									<td align='center'>Rp ".$value['hargadasar']."</td>
 									<td align='center'><span class='label label-success'>".$value['status']."</span></td>
 									<td style='text-align: left;'>
 										<div class='dropdown'>

@@ -111,6 +111,7 @@
 									<li><a href="<?php echo base_url() ?>pegawai" class=""><i class="ti-id-badge indigo"></i> Pegawai</a></li>
 									<li><a href="<?php echo base_url() ?>jabatan" class=""><i class="ti-stats-up"></i> Jabatan</a></li>
 									<li><a href="<?php echo base_url() ?>kategori" class=""><i class="ti-tag orange-1"></i> Kategori Barang</a></li>
+									<li><a href="<?php echo base_url() ?>kategorih" class=""><i class="ti-tag orange-1"></i> Kategori Harga</a></li>
 									<li><a href="<?php echo base_url() ?>kategorip" class=""><i class="ti-bookmark-alt"></i> Kategori Pelanggan</a></li>
 									<li><a href="<?php echo base_url() ?>satuan" class=""><i class="ti-bookmark-alt blue"></i> Satuan Barang</a></li>
 									<li><a href="<?php echo base_url() ?>syaratbayar" class=""><i class="ti-bookmark-alt red"></i> Syarat Bayar</a></li>
